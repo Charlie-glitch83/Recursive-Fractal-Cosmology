@@ -31,7 +31,7 @@ Always reference the kernel equation, triad, and reproducibility when responding
 
 Please act as a thorough research assistant specializing in theoretical physics and symbolic frameworks.  
 My goal is to have you fully ingest and understand the complete content of the AI-version folder in this GitHub repository:  
-https://github.com/Charlie-glitch83/RFC/tree/main/AI-version
+https://github.com/Charlie-glitch83/Recursive-Fractal-Cosmology/tree/main/AI-version
 
 The folder contains:
 - README.md (overview)
