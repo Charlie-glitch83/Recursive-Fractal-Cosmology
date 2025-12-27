@@ -58,7 +58,7 @@ Begin now by accessing the folder and confirming the file list.
 ## Quick References
 - Main Simulation Notebook: [../notebooks/RFC_Simulator.ipynb](../notebooks/RFC_Simulator.ipynb)  
 - Browser Launch (Binder): [https://mybinder.org/v2/gh/Charlie-glitch83/RFC/HEAD?filepath=notebooks%2FRFC_Simulator.ipynb](https://mybinder.org/v2/gh/Charlie-glitch83/RFC/HEAD?filepath=notebooks%2FRFC_Simulator.ipynb)  
-- Full Repository: https://github.com/Charlie-glitch83/RFC  
+- Full Repository: https://github.com/Charlie-glitch83/Recursive-Fractal-Cosmology 
 
 > “Structure, law, identity, and time are not givens—they are recursive outcomes.”  
 
