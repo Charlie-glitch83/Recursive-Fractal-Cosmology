@@ -3,3 +3,10 @@ sympy
 matplotlib
 scipy
 json5
+ipywidgets
+ipython
+jupyter
+notebook
+nbformat
+nbconvert
+
