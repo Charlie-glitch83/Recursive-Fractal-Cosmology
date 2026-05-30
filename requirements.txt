@@ -8,5 +8,5 @@ ipython
 jupyter
 notebook
 nbformat
-nbconvert
+nbconver
 
