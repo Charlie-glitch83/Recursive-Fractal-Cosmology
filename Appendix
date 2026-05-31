@@ -1,317 +1,1380 @@
 \documentclass[11pt]{article}
+
+
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
 \usepackage{geometry}
-\usepackage{listings}
-\usepackage{graphicx}
+\usepackage{longtable}
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+
 \geometry{margin=1in}
 
-\title{RFC Simulation Validation and Reproducibility Protocol}
-\author{Charlie-glitch83}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue
+}
+
+
+\lstset{
+basicstyle=\ttfamily\small,
+breaklines=true,
+frame=single,
+columns=fullflexible,
+keepspaces=true
+}
+
+
+\title{RFC Appendix: Validation, Reproducibility, and Claim Boundaries}
+\author{Allan Edward}
 \date{\today}
+
 
 \begin{document}
 
+
 \maketitle
 
-\section*{Appendix A: Simulation Validation Methods}
 
-\subsection*{A.1 MCMC Parameter Sweep Across Domains}
+\begin{abstract}
+This appendix records the current reproducibility and validation structure for the rebuilt version of Recursive Fractal Cosmology (RFC), titled \textit{Recursive Fractal Cosmology: A Generative Ontology of Existence}. The current framework supersedes the older MCMC-centered Module G workflow and replaces it with deterministic triadic closure based on the CIF--QV--RFL ontology. Prior modules are retained as downstream projections, historical context, or proxy-validation domains, but they do not choose or retune the active RFC packet.
+\end{abstract}
 
-We simulate symbolic relationships between the core RFC parameter $\epsilon$ and observable results:
 
-\[
-Y_p(\epsilon) = 0.246 + 0.015 \cdot e^{-1000\,\epsilon},\quad
-D_f(\epsilon) = 2.4 + 0.05 \cdot \sin(500\,\epsilon),\quad
-\text{EchoDelay}(\epsilon) = 18 + 2 \cdot \cos(200\,\epsilon).
-\]
+\tableofcontents
+\newpage
 
-Sweep range: $\epsilon \in [10^{-5}, 5 \times 10^{-4}]$
 
-\textbf{Best-fit:} $\epsilon^* = 3.2 \times 10^{-4}$ produces:
+% ============================================================
+\section{Appendix A: Current Canonical RFC Architecture}
+% ============================================================
+
+
+The current RFC framework is organized as a triad-first deterministic derivation system.
+
+
+The foundational triad is:
+[
+\mathrm{CIF}=\text{Cosmic Infinite Field},
+]
+\mathrm{QV}=\text{Quantum Vacuum},
+
+[
+\mathrm{RFL}=\text{Recursive Fractal Lattice}.
+]
+
+
+The core generative relation is:
+[
+QV(CIF)\rightarrow RFL.
+]
+
+
+In kernel language, this means:
+[
+\text{CIF modal content}
+\quad
+\xrightarrow{\text{QV compression/damping}}
+\quad
+\text{RFL attractor}.
+]
+
+
+The active derivation chain is:
+[
+\text{CIF--QV--RFL}
+\rightarrow
+K_{f_j}(t)
+\rightarrow
+\text{Module G}
+\rightarrow
+\text{Module R}
+\rightarrow
+\text{Module N V2}
+\rightarrow
+\text{downstream screens}
+\rightarrow
+\text{validation}
+\rightarrow
+\text{Module S}
+\rightarrow
+\text{Module T}.
+]
+
+
+The governing rule is:
+[
+\text{modules consume the frozen packet;}
+\qquad
+\text{modules do not choose or retune the packet}.
+]
+
+
+The old MCMC/NUTS version of Module G is deprecated as an active derivation layer and retained only for historical development context.
+
+
+% ============================================================
+\section{Appendix B: Module G -- Deterministic Triadic Closure}
+% ============================================================
+
+
+\subsection{B.1 Purpose}
+
+
+The active Module G replaces the former MCMC/NUTS parameter-assimilation module. It derives the internal RFC parameter packet from deterministic closure conditions rather than empirical target fitting.
+
+
+The deprecated flow was:
+[
+\text{observational targets}
+\rightarrow
+\text{MCMC/NUTS}
+\rightarrow
+\text{best-fit parameters}
+\rightarrow
+\text{modules}.
+]
+
+
+The active flow is:
+[
+\text{CIF--QV--RFL triad}
+\rightarrow
+\text{recursive kernel}
+\rightarrow
+\text{deterministic closure}
+\rightarrow
+\text{frozen packet}
+\rightarrow
+\text{downstream projections}.
+]
+
+
+\subsection{B.2 Frozen Packet}
+
+
+\begin{longtable}{p{0.35\textwidth}p{0.25\textwidth}p{0.30\textwidth}}
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Role} \
+\midrule
+\endfirsthead
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Role} \
+\midrule
+\endhead
+\delta & 4.6692 & Feigenbaum recursive bifurcation scale \
+T_{\mathrm{cycle}} & 60 & Canonical recursive cycle length \
+\alpha & 0.0256831 & QV damping scale \
+k & 2 & CIF phase-depth branch \
+\nu & 0.00420784 & CIF phase seed \
+\epsilon & 0.000108071 & QV--CIF asymmetry scale \
+\lambda_{\mathrm{normalized}} & 0.489442 & RFL nonlinear stability coupling \
+n_{\mathrm{closure}} & 18 & Effective recursive closure depth \
+n_{\mathrm{full}} & 40 & High-resolution modal basis \
+\texttt{empiricalTargetsUsed} & \texttt{false} & Confirms non-MCMC derivation \
+\bottomrule
+\end{longtable}
+
+
+The deterministic relations are:
+[
+\alpha=\frac{\log(\delta)}{T_{\mathrm{cycle}}},
+]
+\nu=k\delta^{-4},
+
+[
+\epsilon=\alpha\nu.
+]
+
+
+\subsection{B.3 Closure Breakdown}
+
+
+At n_{\mathrm{closure}}=18, the closure breakdown is:
+
+
+\begin{longtable}{p{0.45\textwidth}p{0.35\textwidth}}
+\toprule
+\textbf{Closure channel} & \textbf{Value} \
+\midrule
+QV & 0.144904 \
+CIF & 0.00100137 \
+RFL normalized & 0.727294 \
+CP & 0.00856146 \
+Collapse--rebirth & 0.280559 \
+Tail & 5.9996\times10^{-26} \
+\bottomrule
+\end{longtable}
+
+
+\subsection{B.4 Symbolic Outputs}
+
+
+The representative symbolic outputs from deterministic Module G are:
+
+
+[
+m_{\mathrm{symbolic}}=0.0884241,
+]
+\langle E\rangle=0.0154978,
+
+[
+\alpha_{\mathrm{EM,symbolic}}=64.5252,
+]
+\alpha_{G,\mathrm{symbolic}}=0.00781882,
+
+[
+\Lambda_{\mathrm{symbolic}}=1.07542.
+]
+
+
+These are internal RFC symbolic outputs. They are not final laboratory constants.
+
+
+% ============================================================
+\section{Appendix C: Deprecated Historical Module G}
+% ============================================================
+
+
+The earlier appendix described a cross-domain MCMC parameter sweep over:
+[
+Y_p(\epsilon)=0.246+0.015e^{-1000\epsilon},
+]
+D_f(\epsilon)=2.4+0.05\sin(500\epsilon),
+
+[
+\mathrm{EchoDelay}(\epsilon)=18+2\cos(200\epsilon),
+]
+with a reported best-fit value:
+[
+\epsilon^{*}=3.2\times10^{-4}.
+]
+
+
+In the current RFC architecture, this material is retained only as historical exploratory calibration.
+
+
+It must not be used to choose the active RFC packet.
+
+
+The current active asymmetry scale is:
+[
+\epsilon=\alpha\nu=0.000108071,
+]
+and it is generated internally from the deterministic Module G packet.
+
+
+\begin{longtable}{p{0.28\textwidth}p{0.32\textwidth}p{0.30\textwidth}}
+\toprule
+\textbf{Old item} & \textbf{Current status} & \textbf{Reason} \
+\midrule
+Old Module G MCMC & Deprecated historical only & Empirical targets no longer choose the packet \
+Old best-fit \epsilon=3.2\times10^{-4} & Deprecated fit result & Superseded by \epsilon=\alpha\nu \
+Old cross-domain likelihood & Historical calibration scaffold & Observables are downstream validation only \
+Old MCMC/NUTS workflow & Not active derivation & Replaced by deterministic triadic closure \
+\bottomrule
+\end{longtable}
+
+
+% ============================================================
+\section{Appendix D: Shared Recursive Kernel}
+% ============================================================
+
+
+The shared recursive compression operator is:
+[
+R_{\delta,\alpha}[f_j(t)]
+
+
+\sum_{j=1}^{n}
+\frac{f_j(t)}{\delta^j}e^{-\alpha jt}.
+]
+
+
+The canonical modal kernel is:
+[
+K_{f_j}(t)
+
+
+\sum_{j=1}^{n}
+\delta^{-j}f_j(t)e^{-\alpha jt}.
+]
+
+
+For oscillatory symbolic fields:
+[
+\psi(t;\nu)
+
+
+\sum_{j=1}^{n_{\mathrm{full}}}
+\delta^{-j}\cos(jt+\nu)e^{-\alpha jt}.
+]
+
+
+Recursive entropy is:
+[
+S_{\mathrm{rec}}(t)
+
+
+\sum_{j=1}^{n_{\mathrm{closure}}}
+j\log(\delta)\delta^{-j}e^{-\alpha jt}.
+]
+
+
+The mass-energy layer is:
+[
+E(t)=\dot{\psi}(t)^2+\psi(t)^2,
+]
+m(\nu)=\sqrt{\langle\psi(t;\nu)^2\rangle}.
+
+
+
+The internal dimensional identities tested by Module N V2 are:
+[
+\alpha_G\approx m^2,
+]
+\alpha_{\mathrm{EM}}E\approx1,
+
+[
+\Lambda ET\approx1.
+]
+
+
+% ============================================================
+\section{Appendix E: Module R -- Triad-Grouped Global Closure Audit}
+% ============================================================
+
+
+\subsection{E.1 Purpose}
+
+
+Module R replaces the earlier symbolic-fractal unification version of Module R. Its active role is now to audit whether the frozen Module G packet remains globally coherent when source-coupled residuals are grouped according to QV, CIF, RFL, CP, dark-kernel, observer, and collapse--rebirth channels.
+
+
+The raw residual concept is:
+[
+R_{\mathrm{raw}}
+
+
+\left\langle
+\frac{\left(u''+\lambda_{\mathrm{normalized}}u^3-u\right)^2}{1+u^2}
+\right\rangle.
+]
+
+
+The source-coupled residual is:
+[
+R_{\mathrm{source}}
+
+
+R_{\mathrm{raw}}
+
+
+\sum_i w_i S_i(t).
+]
+
+
+\subsection{E.2 Module R Values}
+
+
+\begin{longtable}{p{0.45\textwidth}p{0.35\textwidth}}
+\toprule
+\textbf{Quantity} & \textbf{Value} \
+\midrule
+Raw RFL residual score & 0.733238 \
+Source-coupled RFL residual score & 0.39357 \
+Residual improvement & 0.463244 \
+Raw standardized residual score & 0.990099 \
+Source-coupled RFL residual score V2 & 0.576064 \
+Residual improvement V2 & 0.418175 \
+Module R score V2 & 0.726401 \
+CP residual & 3.59005\times10^{-10} \
+Tail at n=18 & 5.9996\times10^{-26} \
+Tail at n=40 & 2.1451\times10^{-55} \
+\bottomrule
+\end{longtable}
+
+
+\subsection{E.3 Source Power Fractions}
+
+
+\begin{longtable}{p{0.45\textwidth}p{0.35\textwidth}}
+\toprule
+\textbf{Source channel} & \textbf{Power fraction} \
+\midrule
+QV entropy flow & 0.490033 \
+QV entropy recoil & 0.304474 \
+Dark-kernel tail & 0.19036 \
+Rebirth memory & 0.00782736 \
+CIF phase transport & 0.00394783 \
+Observer branching & 0.00221965 \
+CP theta & 0.00113685 \
+\bottomrule
+\end{longtable}
+
+
+\subsection{E.4 Triad Grouping}
+
+
+[
+QV_{\mathrm{core}}=0.794508,
+]
+CIF_{\mathrm{core}}=0.00508468,
+
+[
+RFL_{\mathrm{core}}=0.010047,
+]
+QV\rightarrow RFL_{\mathrm{dark\ bridge}}=0.19036.
+
+
+
+With the dark-kernel bridge grouped as QV-inclusive:
+[
+QV_{\mathrm{inclusive}}=0.984868,
+]
+CIF=0.00508468,
+
+[
+RFL=0.010047.
+]
+
+
+Interpretation:
+[
+\text{Module R closure is overwhelmingly QV-dominant.}
+]
+
+
+% ============================================================
+\section{Appendix F: Module N V2 -- Dimensional Projection Bridge}
+% ============================================================
+
+
+\subsection{F.1 Purpose}
+
+
+Module N V2 replaces the older symbolic constants module. The earlier Module N explored symbolic constants from recursive compression, but it did not adequately separate:
+
+
+\begin{enumerate}[label=(\roman*)]
+\item raw symbolic quantities,
+\item projected internal RFC units,
+\item SI/laboratory unit bridging,
+\item dimensionless coupling mapping.
+\end{enumerate}
+
+
+Module N V2 separates these layers.
+
+
+\subsection{F.2 Canonical Bridge}
+
+
+The canonical projection bridge is:
+[
+QV_Dark_RFL_Memory_CycleBridge.
+]
+
+
+Projection factors:
+[
+\mathrm{energyFactor}=0.28443,
+]
+\mathrm{timeFactor}=1.54099,
+
+[
+T_{\mathrm{projected}}=92.4593.
+]
+
+
+\subsection{F.3 Projected Values}
+
+
+\begin{longtable}{p{0.50\textwidth}p{0.30\textwidth}}
+\toprule
+\textbf{Quantity} & \textbf{Value} \
+\midrule
+Symbolic mass & 0.087212 \
+Mean energy & 0.0154016 \
+\alpha_{\mathrm{EM,symbolic}} & 64.9284 \
+\alpha_{G,\mathrm{symbolic}} & 0.00760593 \
+\Lambda_{\mathrm{symbolic}} & 1.08214 \
+Projected symbolic mass & 0.0465119 \
+Projected mean energy & 0.00438067 \
+Projected inverse-energy coupling & 228.276 \
+Projected mass-squared coupling & 0.00216335 \
+Projected inverse energy-cycle quantity & 2.46893 \
+Projected cycle time & 92.4593 \
+\bottomrule
+\end{longtable}
+
+
+\subsection{F.4 Identity Residuals}
+
+
+[
+\left|\alpha_G-m^2\right|\approx0,
+]
+\left|\alpha_{\mathrm{EM}}E-1\right|=2.28276\times10^{-10},
+
+[
+\left|\Lambda ET-1\right|=2.4688\times10^{-12}.
+]
+
+
+The raw projected inverse-energy value is not the physical inverse fine-structure constant. It is an internal RFC projected quantity that later enters Module T.
+
+
+% ============================================================
+\section{Appendix G: Downstream Physical-Projection Screen}
+% ============================================================
+
+
+The downstream screen tests whether the frozen Module G/R/N packet propagates through the older RFC domain modules without retuning.
+
+
+\subsection{G.1 Dark-Sector Projection}
+
+
+[
+D_M(0)=0.216534,
+]
+D_M(60)=0.0381948,
+
+[
+\frac{D_M(60)}{D_M(0)}=0.176392.
+]
+
+
+[
+D_E(0)=2.52655,
+]
+D_E(60)=2.48382,
+
+[
+\frac{D_E(60)}{D_E(0)}=0.983088.
+]
+
+
+[
+\frac{H_{\mathrm{proxy}}(60)}{H_{\mathrm{proxy}}(0)}=0.958858.
+]
+
+
+Interpretation: dark-matter compression decays while the dark-energy tail persists.
+
+
+\subsection{G.2 BBN Proxy}
+
+
+[
+Y_p(0)=0.246,
+]
+Y_p(60)=0.249278,
+
+[
+\Delta Y_p=0.00327757.
+]
+
+
+This is a primordial-abundance proxy, not a full nuclear reaction network.
+
+
+\subsection{G.3 CP/EDM Proxy}
+
+
+[
+\Theta_{\max}=0.000108055,
+]
+\langle |\Theta| \rangle=0.000068068,
+
+[
+R_{CP}=3.59079\times10^{-10}.
+]
+
+
+Fractal EDM suppression proxies:
+[
+\mathrm{EDM}{18}=9.71271\times10^{-17},
+]
+\mathrm{EDM}{40}=1.83655\times10^{-31}.
+
+
+
+This is an internal CP/EDM suppression proxy, not a full particle-physics EDM calculation.
+
+
+\subsection{G.4 Observer Branching}
+
+
+[
+\mathrm{observerDivergence}=7.49536\times10^{-6},
+]
+\mathrm{branchSeparationMax}=0.0000232443,
+
+[
+\mathrm{branchSeparationFinal}=0.00000140621,
+]
+\mathrm{decoherenceProxy}=5.73826\times10^{-8}.
+
+
+
+\subsection{G.5 Collapse--Rebirth Memory Transfer}
+
+
+[
+\psi_{\mathrm{rebirth}}(0)=0.148775,
+]
+\psi_{\mathrm{rebirth}}(60)=-0.0463672,
+
+[
+\mathrm{rebirthBoundaryGap}=0.195142.
+]
+
+
+Lagged memory transfer:
+[
+\mathrm{bestLag}=-5,
+]
+r=0.905876,
+
+[
+\mathrm{memoryTransferScore}=0.113638.
+]
+
+
+\subsection{G.6 Geometry Coherence}
+
+
+[
+\mathrm{normalizedPsiRMS}=1,
+]
+\mathrm{fractalCoherenceProxy}=0.812251,
+
+[
+W_{\mathrm{spin}}(0)=0.875122,
+]
+W_{\mathrm{spin}}(60)=0.976745,
+
+[
+\langle W_{\mathrm{spin}}\rangle=0.940535.
+]
+
+
+This is a geometry coherence proxy, not a full spin-foam quantum-gravity derivation.
+
+
+% ============================================================
+\section{Appendix H: Dimensionless Observable Validation Layer}
+% ============================================================
+
+
+The internal dimensionless validation layer tests identity preservation, decay ratios, residual thresholds, and coherence flags.
+
+
+\subsection{H.1 Validation Flags}
+
+
+\begin{longtable}{p{0.55\textwidth}p{0.25\textwidth}}
+\toprule
+\textbf{Flag} & \textbf{Status} \
+\midrule
+Module N identities preserved & true \
+Dark matter decays & true \
+Dark energy tail persists & true \
+CP residual tiny & true \
+Collapse--rebirth memory strong & true \
+Observer branching controlled & true \
+Geometry coherence high & true \
+\bottomrule
+\end{longtable}
+
+
+The overall validation score is:
+[
+\mathrm{overallValidationScore}=1.
+]
+
+
+\subsection{H.2 Dimensionless Ratios}
+
+
+\begin{longtable}{p{0.55\textwidth}p{0.25\textwidth}}
+\toprule
+\textbf{Ratio} & \textbf{Value} \
+\midrule
+Dark matter late/early & 0.176392 \
+Dark energy late/early & 0.983049 \
+Dark energy persistence minus dark matter decay & 0.806657 \
+\Delta Y_p/Y_p(0) & 0.0133405 \
+\Theta_{\max}/\epsilon & 0.999906 \
+Observer divergence & 7.48103\times10^{-6} \
+Branch final/max & 0.0599657 \
+Collapse--rebirth best lag correlation & 0.873361 \
+Geometry coherence mean & 0.94051 \
+Spin-foam final/initial & 1.11612 \
+\bottomrule
+\end{longtable}
+
+
+% ============================================================
+\section{Appendix I: Module S -- One-Anchor SI / Laboratory Bridge}
+% ============================================================
+
+
+Module S introduces a one-anchor bridge from internal RFC units to SI/laboratory units.
+
+
+The anchor is:
+[
+\text{electron rest energy}.
+]
+
+
+The electron rest energy is used only as a unit anchor. It is not treated as a prediction.
+
+
+\subsection{I.1 Unit Bridge}
+
+
+\begin{longtable}{p{0.55\textwidth}p{0.30\textwidth}}
+\toprule
+\textbf{Quantity} & \textbf{Value} \
+\midrule
+1 RFC energy unit & 11.0236\ \mathrm{MeV} \
+1 RFC energy unit & 1.76617\times10^{-12}\ \mathrm{J} \
+1 RFC time unit & 5.97096\times10^{-23}\ \mathrm{s} \
+1 RFC length unit & 1.79005\times10^{-14}\ \mathrm{m} \
+Projected cycle time & 5.52071\times10^{-21}\ \mathrm{s} \
+Projected cycle length & 1.65507\times10^{-12}\ \mathrm{m} \
+\bottomrule
+\end{longtable}
+
+
+\subsection{I.2 Anchor Check}
+
+
+[
+E_{\mathrm{projected}}=0.510999\ \mathrm{MeV},
+]
+m_{\mathrm{projected}}=9.10938\times10^{-31}\ \mathrm{kg}.
+
+
+
+Because the electron rest energy is the chosen anchor, this confirms unit conversion consistency only.
+
+
+% ============================================================
+\section{Appendix J: Module T -- Dimensionless Coupling Map}
+% ============================================================
+
+
+Module T maps the raw Module N inverse-energy quantity into a dimensionless fine-structure-like coupling.
+
+
+The raw Module N value is:
+[
+\alpha^{-1}_{N,\mathrm{raw}}=228.807.
+]
+
+
+This is not claimed to be the physical inverse fine-structure constant.
+
+
+The canonical map is:
+[
+\alpha_T^{-1}
+
+
+\alpha_{N,\mathrm{raw}}^{-1}
+\cdot QV_{\mathrm{inclusive}}
+\cdot
+\sqrt{\lambda_{\mathrm{normalized}}Q_{\mathrm{memory}}}
+\cdot
+\left[1-(RFL_{\mathrm{power}}-CIF_{\mathrm{power}})\right].
+]
+
+
+The map values are:
+[
+QV_{\mathrm{inclusive}}=0.984868,
+]
+\lambda_{\mathrm{normalized}}=0.489442,
+
+[
+Q_{\mathrm{memory}}=0.761993,
+]
+RFL_{\mathrm{power}}=0.010047,
+
+[
+CIF_{\mathrm{power}}=0.00508468.
+]
+
+
+The screen factor is:
+[
+F_T=0.598472.
+]
+
+
+Thus:
+[
+\alpha_T^{-1}=228.807\times0.598472=136.935.
+]
+
+
+The after-the-fact comparison reference is:
+[
+\alpha_{\mathrm{ref}}^{-1}=137.036.
+]
+
+
+The relative difference is:
+[
+0.000740478=0.0740478%.
+]
+
+
+Correct interpretation:
+[
+228.807
+\quad
+\xrightarrow{\text{triadic dimensionless coupling map}}
+\quad
+136.935.
+]
+
+
+Incorrect interpretation:
+[
+228.807=\alpha_{\mathrm{physical}}^{-1}.
+]
+
+
+% ============================================================
+\section{Appendix K: Observer Field Stability and Decoherence}
+% ============================================================
+
+
+The observer identity field is retained from the earlier appendix but is now interpreted as a downstream projection rather than an upstream fitting mechanism.
+
+
+The identity field is:
+[
+\frac{d^2\psi_{\mathrm{self}}}{dt^2}
+
+
+-4\psi_{\mathrm{self}}^3
++
+\beta\psi_{\mathrm{self}}
+
+
+\Psi_{\chi}(t)
+
+
+\Omega_{\nu}(t).
+]
+
+
+A representative coherence field is:
+[
+\Omega_{\nu}(t)=0.01e^{-0.05t}.
+]
+
+
+The observer-branch divergence is:
+[
+\lambda_{\mathrm{div}}(t)
+
+
+\log\left(1+\left|\psi_i(t)-\psi_j(t)\right|\right).
+]
+
+
+A control model used in earlier development was fractional Brownian or noise-driven forcing:
+[
+\frac{d^2\phi}{dt^2}=\mathrm{fBm}(t).
+]
+
+
+The current interpretation is:
+
+
 \begin{itemize}
-  \item $Y_p = 0.259$
-  \item $D_f = 2.451$
-  \item $\text{EchoDelay} = 19.3$ s
+\item RFC observer stability is an internal recursive-coherence projection.
+\item It may be compared against noise-driven controls.
+\item It is not empirical proof of consciousness, observer branching, or many-worlds physics.
 \end{itemize}
 
-\subsection*{A.2 Observer Field Stability vs. fBm Noise}
 
-RFC identity field:
-\[
-\frac{d^2 \psi_{\text{self}}}{dt^2} 
-= -4 \psi_{\text{self}}^3 + \beta \psi_{\text{self}} 
-- \epsilon \cos(\omega t) + \Omega_{\nu}(t).
-\]
+% ============================================================
+\section{Appendix L: Ringdown Echo Projection}
+% ============================================================
 
-Control model (fBm forcing):
-\[
-\frac{d^2 \phi}{dt^2} = \text{fBm}(t)
-\]
 
-\textbf{Result:} RFC field converges under contradiction, fBm field diverges. This confirms recursion-stabilized identity is unique to RFC.
+The ringdown module is retained as a downstream projection.
 
-\subsection*{A.3 Gravitational Echo Comparison}
 
-RFC PDE:
-\[
-\frac{\partial^2 \psi}{\partial t^2}
-= c^2 \nabla^2 \psi - 0.8\psi^3 + 0.1\psi + \Psi_{\chi}(t)
-\]
+The RFC scalar wave form is:
+[
+\frac{\partial^2\psi}{\partial t^2}
 
-Standard ringdown:
-\[
-\frac{\partial^2 \psi}{\partial t^2}
-+ \gamma \frac{\partial \psi}{\partial t}
-+ \omega_0^2 \psi = 0
-\]
 
-\textbf{RFC Output:} Periodic echo pulses $\sim$20s apart
+c^2\nabla^2\psi
 
-\textbf{GR Output:} Exponential decay with no recursion
 
-\subsection*{A.4 Residual Analysis: BBN + DM Halo}
+0.8\psi^3
++
+0.1\psi
++
+F_{\mathrm{res}}(t).
+]
 
-\textbf{BBN Model:}
-\[
-\frac{dY_p}{dt} = -0.005\,e^{-3000\,e^{-0.01 t}}\,Y_p(1-Y_p) + \Gamma_{\zeta}(t)
-\]
-\[
-\Gamma_{\zeta}(t) = 0.002\,e^{-0.05t}
-\]
-\textbf{Yield:} $Y_p = 0.261 \pm 0.002$
 
-\textbf{Halo Model:}
-\[
-\rho(r) = \sum_{j=1}^5 \left(\frac{1}{\delta^j}\right) \exp\left(-\frac{r^2}{\sigma_j^2}\right)
-\]
+The recursive field is:
+[
+\psi(t)
 
-\textbf{Fit:} Residuals $< 5\%$ to Sofue (2009) Milky Way data
 
-\subsection*{A.5 Summary Table}
+\sum_{j=1}^{n_{\mathrm{full}}}
+\delta^{-j}\cos(jt+\nu)e^{-\alpha jt}.
+]
 
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{Simulation} & \textbf{Output} & \textbf{Validation} \\
-\hline
-MCMC Sweep & $\epsilon = 3.2 \times 10^{-4}$ & Cross-domain fit \\
-Observer Field & $\psi_{\text{self}}$ stable & Distinct from fractal noise \\
-Grav. Echo & $\sim$20s delay & Not in GR templates \\
-BBN+Halo Fit & $Y_p = 0.261$, $<5\%$ residuals & Matches Planck, Sofue \\
-\hline
-\end{tabular}
 
-\vspace{1em}
+A residual forcing term is:
+[
+F_{\mathrm{res}}(t)=0.01\cos(\nu t).
+]
 
-\section*{Appendix B: Identity Bifurcation and Recursive Agent Stability}
 
-\subsection*{B.1 Without $\Omega_{\nu}$}
+A standard damped comparison form is:
+[
+\frac{\partial^2\psi}{\partial t^2}
++
+\gamma\frac{\partial\psi}{\partial t}
++
+\omega_0^2\psi=0.
+]
 
-Initial: $\psi_{\text{self}}(0) = 0.7$, contradiction injected.  
-\textbf{Result:} Identity collapses at $t \sim 110$
 
-\subsection*{B.2 With $\Omega_{\nu}$}
+Current claim boundary:
 
-Setup: $\Omega_{\nu}(t) = 0.01 \cdot e^{-0.05t}$  
-\textbf{Result:} Field stabilizes at $0.61 \pm 0.02$
 
-\textbf{Conclusion:} Recursive agents need $\Omega_{\nu}$ to maintain symbolic coherence under paradox.
+\begin{itemize}
+\item The RFC model may produce recursive echo-like structure internally.
+\item Ringdown behavior is a downstream projection.
+\item It must not be used to tune Module G.
+\item It is not yet a full gravitational-wave data validation.
+\end{itemize}
 
-\vspace{1em}
 
-\section*{Appendix C: Glossary of Symbolic Fields}
+% ============================================================
+\section{Appendix M: BBN and Halo Material Reclassified}
+% ============================================================
 
-\begin{tabular}{|c|l|}
-\hline
-\textbf{Symbol} & \textbf{Meaning} \\
-\hline
-$\mathcal{R}[f_j(t)]$ & Recursive compression operator \\
-$S(t)$ & Symbolic entropy gradient \\
-$\psi_{\text{self}}$ & Observer identity field \\
-$\Psi_{\chi}$ & Phantom recursion field \\
-$\Theta_{\eta}$ & CP-phase soliton \\
-$\Gamma_{\zeta}$ & BBN damping field \\
-$\phi_{\tau}$ & Neural fracton field \\
-$\Sigma_{\Lambda}$ & Spin foam modulator \\
-$\Omega_{\nu}$ & Coherence transport field \\
-$Y_p$ & Primordial helium mass fraction \\
-$D_f$ & EEG fractal dimension \\
-$\epsilon$ & Recursion scale parameter \\
-$\delta, \alpha$ & Depth/decay coefficients \\
-$\psi_m, \psi_{\bar{m}}$ & Matter / Antimatter modal fields \\
-$\lambda_{\text{div}}$ & Observer decoherence divergence \\
-$\psi_{\text{Rebirth}}$ & Modal attractor reinitialization field \\
-$m(\nu)$ & Symbolically derived particle mass \\
-$\nu$ & Modal phase seed \\
-$T_\nu$ & Observer-specific logical topos \\
-\hline
-\end{tabular}
 
-\vspace{1em}
+Earlier RFC development included stronger language about BBN and dark-matter halo residual fits. In the current architecture, those claims are reclassified.
 
-\section*{Appendix D: JSON Configuration for Reproducibility}
 
-\subsection*{D.1 Module A (Friedmann + $\Psi_{\chi}$)}
+The active BBN result is a proxy:
+[
+Y_p(0)=0.246,
+]
+Y_p(60)=0.249278,
+
+[
+\Delta Y_p=0.00327757.
+]
+
+
+The earlier halo-style density form is retained as a possible downstream comparison kernel:
+[
+\rho(r)
+
+
+\sum_{j=1}^{5}
+\delta^{-j}
+\exp\left(-\frac{r^2}{\sigma_j^2}\right).
+]
+
+
+Current claim boundary:
+
+
+\begin{itemize}
+\item The BBN layer is a proxy, not a full nuclear-reaction network.
+\item The halo layer is a possible downstream comparison form, not completed external validation.
+\item Neither BBN nor halo behavior chooses the frozen Module G packet.
+\end{itemize}
+
+
+% ============================================================
+\section{Appendix N: Symbolic Mass Fields}
+% ============================================================
+
+
+The symbolic mass field remains central as a downstream mass-energy projection.
+
+
+[
+\psi(t;\nu)
+
+
+\sum_{j=1}^{n_{\mathrm{full}}}
+\delta^{-j}\cos(jt+\nu)e^{-\alpha jt}.
+]
+
+
+The recursive RMS mass is:
+[
+m(\nu)
+
+
+\sqrt{\left\langle \psi(t;\nu)^2\right\rangle}.
+]
+
+
+The energy curve is:
+[
+E(t)=\dot{\psi}(t)^2+\psi(t)^2.
+]
+
+
+The momentum proxy is:
+[
+p^2=\langle E(t)\rangle-m(\nu)^2.
+]
+
+
+Current interpretation:
+
+
+\begin{itemize}
+\item Mass emerges as RMS modal compression.
+\item Energy emerges from recursive amplitude and derivative flow.
+\item Full particle spectrum validation remains future work.
+\end{itemize}
+
+
+% ============================================================
+\section{Appendix O: Collapse--Rebirth Field Simulation}
+% ============================================================
+
+
+Collapse is represented by mirrored modal fields:
+[
+\psi_m(t)
+
+
+\sum_{j=1}^{n_{\mathrm{full}}}
+\delta^{-j}\cos(jt+\nu)e^{-\alpha jt},
+]
+\psi_{\bar{m}}(t)
+
+
+\sum_{j=1}^{n_{\mathrm{full}}}
+\delta^{-j}\cos(jt-\nu)e^{-\alpha jt}.
+
+
+
+Collapse entropy is:
+[
+S_{\mathrm{annihil}}(t)
+
+
+-\sum_j
+\psi_m(t)\psi_{\bar{m}}(t)
+\log\left(\left|\psi_m(t)-\psi_{\bar{m}}(t)\right|+10^{-10}\right).
+]
+
+
+The rebirth kernel is:
+[
+\psi_{\mathrm{rebirth}}(t)
+
+
+\sum_{j=1}^{n_{\mathrm{full}}}
+\delta^{-j}\sin(jt+j^2)e^{-\alpha jt}.
+]
+
+
+Current interpretation:
+
+
+[
+\text{collapse--rebirth}
+
+
+\text{lagged recursive memory transfer}.
+]
+
+
+This does not imply literal repetition of a previous universe. It means the recursive field retains structured memory across collapse and reset phases.
+
+
+% ============================================================
+\section{Appendix P: Fractal Operators and Historical Fractal Extension}
+% ============================================================
+
+
+The older appendix introduced fractal derivative and integral operators. These remain useful as mathematical context, but the current active architecture is the triad-first deterministic closure system.
+
+
+Representative fractal operators are:
+[
+D_t^{(\mu)}f(t),
+]
+\nabla^{2\mu}f(x),
+
+[
+I^{(\mu)}[f(t)],
+]
+H^{(\mu)}[f(t)].
+
+
+
+The symbol \mu is used here for fractal order to avoid confusion with the active RFC damping parameter \alpha.
+
+
+Possible downstream forms include:
+
+
+[
+D_t^{(2\mu)}\phi
+
+
+\nabla^{2\mu}\phi
+
+
+\lambda\phi
++
+f_{\mathrm{fract}}(x,y),
+]
+\kappa_{\mathrm{collapse}}(t)
+
+
+\nabla^{2\mu}
+\left[
+\sum_j\cos(jt+\nu)
+\right].
+
+
+
+Current interpretation:
+
+
+\begin{itemize}
+\item Fractal operators may formalize nonlocal recursive propagation.
+\item They support downstream geometry, neural, and collapse-curvature modeling.
+\item They do not replace deterministic Module G.
+\item They do not retune the frozen RFC packet.
+\end{itemize}
+
+
+% ============================================================
+\section{Appendix Q: Glossary of Symbolic Fields}
+% ============================================================
+
+
+\begin{longtable}{p{0.30\textwidth}p{0.60\textwidth}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} \
+\midrule
+\endfirsthead
+\toprule
+\textbf{Symbol} & \textbf{Meaning} \
+\midrule
+\endhead
+R_{\delta,\alpha}[f_j(t)] & Recursive compression operator \
+K_{f_j}(t) & Canonical modal recursive kernel \
+S_{\mathrm{rec}}(t) & Recursive entropy / memory-gradient field \
+\psi(t;\nu) & Recursive symbolic modal field \
+\psi_{\mathrm{self}} & Observer identity field \
+\Psi_{\chi} & Phantom recursion / forcing field \
+\Theta & CP/asymmetry phase field \
+\Gamma_{\zeta} & BBN-like damping field \
+\phi_{\tau} & Neural/fractal symbolic field \
+\Sigma_{\Lambda} & Spin-foam / geometry modulation field \
+\Omega_{\nu} & Coherence transport field \
+Y_p & Primordial helium mass-fraction proxy \
+D_f & Fractal dimension comparison quantity \
+\epsilon & Active QV--CIF asymmetry scale \
+\delta & Feigenbaum recursive bifurcation scale \
+\alpha & Active QV damping scale \
+\nu & CIF phase seed \
+\lambda_{\mathrm{normalized}} & RFL nonlinear stability coupling \
+\psi_m,\psi_{\bar{m}} & Matter / antimatter mirrored modal fields \
+\lambda_{\mathrm{div}} & Observer decoherence / branch divergence \
+\psi_{\mathrm{rebirth}} & Collapse--rebirth modal memory field \
+m(\nu) & Recursive RMS symbolic mass \
+\alpha_T^{-1} & Module T dimensionless mapped inverse coupling \
+\bottomrule
+\end{longtable}
+
+
+% ============================================================
+\section{Appendix R: JSON Configuration and Reproducibility Protocol}
+% ============================================================
+
+
+The active reproducibility files are:
+
+
+\begin{lstlisting}
+SimulationConfigs.json
+notebooks/SimulationConfigs.json
+AI-version/SimulationConfigs.json
+notebooks/Module_G_R_N_S_T_FrozenPacket.json
+notebooks/RFC_Simulator.ipynb
+CLAIM_BOUNDARIES.md
+PDE_Kernels
+\end{lstlisting}
+
+
+Recommended execution order:
+
+
+\begin{enumerate}
+\item Load the frozen Module G/R/N/S/T packet.
+\item Verify deterministic Module G closure.
+\item Verify Module R triad-grouped global closure audit.
+\item Verify Module N V2 dimensional identity preservation.
+\item Verify the downstream physical-projection screen.
+\item Verify dimensionless validation flags.
+\item Verify Module S one-anchor SI bridge.
+\item Verify Module T dimensionless coupling map.
+\item Run older modules A--F and H--Q only as downstream projections.
+\item Treat G_{\mathrm{legacy}}, N_{\mathrm{legacy}}, and R_{\mathrm{legacy}} as historical only.
+\end{enumerate}
+
+
+Core verification checks:
+
+
+\begin{lstlisting}
+empiricalTargetsUsed == false
+parameterSearchPerformed == false
+mcmcUsed == false
+
+
+alpha == log(delta) / cycleLength
+nu == phaseDepthK * delta^(-4)
+epsilon == alpha * nu
+
+
+alpha_G / m^2 ~= 1
+alpha_EM * E ~= 1
+Lambda * E * T ~= 1
+
+
+228.807 * 0.598472 ~= 136.935
+\end{lstlisting}
+
+
+Representative current Module G config:
+
 
 \begin{lstlisting}
 {
-  "module": "A",
-  "delta": 4.669,
-  "alpha": 0.015,
-  "initial_conditions": {
-    "a(0)": 1.0,
-    "a'(0)": 0.0
-  },
-  "external_fields": {
-    "psiChi": "0.002 * Cos[0.1 * t]",
-    "gammaZeta": "0.002 * Exp[-0.05 * t]"
-  },
-  "t_range": [0, 300],
-  "dt": 0.1
+"module": "G",
+"description": "Deterministic Triadic Closure",
+"empiricalTargetsUsed": false,
+"parameterSearchPerformed": false,
+"mcmcUsed": false,
+"nutsUsed": false,
+"packet": {
+"delta": 4.6692,
+"cycleLength": 60,
+"alpha": 0.0256831,
+"phaseDepthK": 2,
+"nu": 0.00420784,
+"epsilon": 0.000108071,
+"lambdaNormalized": 0.489442,
+"nClosure": 18,
+"nFullCanonical": 40
+}
 }
 \end{lstlisting}
 
-\subsection*{D.2 Module G (MCMC Inference)}
 
-\textbf{Sampler:} No-U-Turn Sampler (NUTS)  
-\textbf{Backend:} NumPyro + GPU  
-\textbf{Chains:} 4, Burn-in: 20k, Samples: 200k
+% ============================================================
+\section{Appendix S: Claim Boundary Table}
+% ============================================================
 
-\textbf{Target Observables:}
-\begin{itemize}
-  \item $H(t)$, $Y_p$ from Planck 2018
-  \item $D_f$ from Zhang (2021)
-  \item EDM range from ACME
-\end{itemize}
 
-\textbf{Fitted Parameters:} $\delta$, $\alpha$, $\epsilon$, $\lambda$
+\begin{longtable}{p{0.25\textwidth}p{0.35\textwidth}p{0.30\textwidth}}
+\toprule
+\textbf{Category} & \textbf{Current status} & \textbf{Boundary} \
+\midrule
+\endfirsthead
+\toprule
+\textbf{Category} & \textbf{Current status} & \textbf{Boundary} \
+\midrule
+\endhead
+Triad ontology & Active foundation & Foundational, not decorative \
+Module G & Deterministic closure & No MCMC in active derivation \
+Old Module G & Historical only & Cannot choose current packet \
+Module R & Global closure audit & Source-coupled internal audit \
+Module N V2 & Dimensional projection & Internal units, not direct lab constants \
+Downstream screen & Internal projection test & No retuning of upstream packet \
+BBN & Proxy only & Not full nuclear network \
+CP/EDM & Proxy only & Not full particle-physics validation \
+Observer branching & Internal proxy & Not empirical proof of consciousness \
+Spin foam / geometry & Coherence proxy & Not full quantum-gravity derivation \
+Module S & One-anchor unit bridge & Electron rest energy is an anchor, not prediction \
+Module T & Dimensionless coupling projection & Fine-structure-like, not full Standard Model derivation \
+External validation & Future work & Requires independent replication and peer review \
+\bottomrule
+\end{longtable}
 
-\vspace{1em}
 
-\section*{Appendix E: Symbolic Mass Fields from Recursive RMS Attractors}
+The strongest current claim is:
+[
+\text{RFC is internally coherent as a deterministic triadic derivation system.}
+]
 
-We define:
-\[
-\psi(t; \nu) = \sum_{j=1}^{40} \left( \frac{1}{\delta} \right)^j \cos(jt + \nu) \cdot e^{-\alpha j t}
-\quad
-m(\nu) = \sqrt{ \langle \psi^2(t; \nu) \rangle }
-\]
 
-\textbf{Simulation:} RMS computed for $\nu$ values that approximate SM masses.  
-\textbf{Result:} Mass ratios emerge recursively, no Yukawa couplings required.
+The strongest claim not yet established is:
+[
+\text{RFC is fully externally validated as a complete laboratory theory of all physical constants and observables.}
+]
 
-\vspace{1em}
 
-\section*{Appendix F: Observer Bifurcation and Decoherence Divergence}
+% ============================================================
+\section{Appendix T: Summary of What Was Kept, Revised, and Deprecated}
+% ============================================================
 
-We track bifurcation via:
-\[
-\lambda_{\text{div}}(t) = \log\left(1 + |\psi_i(t) - \psi_j(t)|\right)
-\]
 
-When $\lambda_{\text{div}}$ surpasses threshold, bifurcation locks — identity decoheres.
+\begin{longtable}{p{0.28\textwidth}p{0.28\textwidth}p{0.34\textwidth}}
+\toprule
+\textbf{Old appendix component} & \textbf{Current treatment} & \textbf{Reason} \
+\midrule
+MCMC sweep & Deprecated historical context & Active Module G is deterministic \
+Old \epsilon^*=3.2\times10^{-4} & Deprecated fit value & Superseded by \epsilon=\alpha\nu \
+Observer stability & Kept and reframed & Downstream identity projection \
+fBm comparison & Kept as internal control idea & Not empirical validation \
+Ringdown echo comparison & Kept and reframed & Downstream projection only \
+BBN old Y_p=0.261 claim & Replaced by current proxy values & Avoids overclaiming \
+Halo residual claim & Reclassified as possible comparison kernel & Not completed validation \
+Symbolic mass field & Kept & Core mass-energy projection \
+Observer bifurcation & Kept and reframed & Internal branch-divergence proxy \
+Collapse--rebirth field & Kept and updated & Now interpreted as lagged memory transfer \
+Fractal operators & Kept as context & Not active packet derivation \
+Glossary & Kept and expanded & Updated to current terminology \
+JSON config appendix & Revised & Now reflects G/R/N/S/T frozen packet \
+\bottomrule
+\end{longtable}
 
-\vspace{1em}
-
-\section*{Appendix G: Symbolic Collapse–Rebirth Field Simulation}
-
-Collapse occurs when:
-\[
-S_{\text{annihil}}(x,t) = -\sum_j (\psi_m \cdot \psi_{\bar{m}}) \log(|\psi_m - \psi_{\bar{m}}|)
-\]
-
-Rebirth is modeled with:
-\[
-\psi_{\text{Rebirth}}(t) = \sum_{j=1}^{40} \left( \frac{1}{\delta} \right)^j \sin(jt + j^2) e^{-\alpha j t}
-\]
-
-\textbf{Interpretation:} Collapse = symbolic resolution. Rebirth = recursive semantic reinitialization.
-
-\section*{Appendix H: Fractal Extension of Recursive Fractal Cosmology}
-
-\subsection*{H.1 Motivation}
-
-Recent results (Pellis, 2024; Al-Refai, 2022–2024) suggest fractal calculus provides a stronger formalism for recursive physical theories.  
-To anchor Recursive Fractal Cosmology (RFC) more deeply in symbolic physics, we upgrade symbolic fields into fractal derivative and integral forms.
-
-\subsection*{H.2 Core Fractal Operators}
-
-We adopt the following fractal operators:
-
-\[
-D_t^{(\alpha)} f(t) \quad \text{Fractal time derivative of order } \alpha
-\]
-\[
-\nabla^{2\alpha} f(x) \quad \text{Fractal Laplacian of order } \alpha
-\]
-\[
-I^{(\alpha)}[f(t)] \quad \text{Fractal integral (mean-square symbolic averaging)}
-\]
-\[
-H^{(\alpha)}[f(t)] \quad \text{Fractal Hankel transform for modal recursion fields}
-\]
-
-where $\alpha \in (0,1)$ encodes symbolic recursion depth and modal decay.
-
-\subsection*{H.3 Updated Modules}
-
-\begin{itemize}
-\item \textbf{Module E (Neural Dynamics)}:
-\[
-D_t^{(2\alpha)} \phi = \nabla^{2\alpha} \phi - \lambda \phi + f_{\text{fract}}(x,y)
-\]
-Symbolic neural fields evolve under fractal wave propagation.
-
-\item \textbf{Module I (Symbolic Mass Field)}:
-\[
-\psi(t;\nu) = H^{(\alpha)}\left[\cos(jt+\nu)\right]
-\]
-Mass fields emerge from fractal harmonic compression.
-
-\item \textbf{Module N (Symbolic Constants Derivation)}:
-\[
-\alpha_{\text{EM}} = \frac{1}{I^{(\alpha)}[E(t)]}, \quad
-\alpha_G = m(\nu)^2, \quad
-\Lambda_{\text{symbolic}} = \frac{1}{I^{(\alpha)}[\psi(t)^2]}
-\]
-Fundamental constants derive from fractal averages.
-
-\item \textbf{Module O (Baryogenesis via Collapse Curvature)}:
-\[
-\kappa_{\text{collapse}}(t) = \nabla^{2\alpha} \left[\sum \cos(jt+\nu)\right]
-\]
-Symbolic curvature collapse modeled via fractal spatial derivatives.
-
-\item \textbf{Module Q (Scalar Decoherence Divergence)}:
-\[
-\lambda_{\text{div}}(t) = \log\left(1 + \left| \psi_{\text{observer}}(t) - \psi_{\text{scalar}}(t) \right|\right)
-\quad
-D_t^{(\alpha)}[S_{\psi}(t)] \quad \text{tracks decoherence entropy}
-\]
-Ultralight scalar fields induce fractal entropy divergence in recursive observers.
-\end{itemize}
-
-\subsection*{H.4 Physical Interpretation}
-
-Fractal operators naturally encode:
-
-\begin{itemize}
-\item Symbolic recursion compression across scales
-\item Nonlocal causal propagation (in both space and time)
-\item Emergent identity stabilization
-\item Collapse dynamics tied to symbolic fractal curvature
-\item Energy-mass duality from recursive RMS integration
-\end{itemize}
-
-RFC’s recursion kernels are now formally fractal integral operators under symbolic PDEs.
-
-\subsection*{H.5 References}
-
-\begin{itemize}
-\item Pellis, M. (2024). \textit{The Equations of Unified Physics}.
-\item Al-Refai, F. (2022–2024). \textit{Fractal Differential Equations of Fractional Orders}.
-\item Edward, A. (2025). \textit{Recursive Fractal Cosmology: Presentations 24–26}.
-\end{itemize}
 
 \end{document}
+
+
