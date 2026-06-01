@@ -8,6 +8,26 @@ Repository status: Active triad-first deterministic rebuild with downstream vali
 
 ---
 
+DOI / Citation Metadata
+
+Canonical RFC preprint:
+
+Recursive Fractal Cosmology: A Generative Ontology of Existence
+DOI: "10.5281/zenodo.20473033" (https://doi.org/10.5281/zenodo.20473033)
+
+Earlier RFC preprints:
+
+Recursive Fractal Cosmology: A Theory of Everything that provides more Answers than Questions
+DOI: "10.5281/zenodo.15250393" (https://doi.org/10.5281/zenodo.15250393)
+
+Recursive Fractal Cosmology: A unified symbolic framework for Emergence, Structure, and Observer Identity
+DOI: "10.5281/zenodo.15234638" (https://doi.org/10.5281/zenodo.15234638)
+
+Recursive Fractal Cosmology: A symbolic field theory of emergence, identity, and time
+DOI: "10.5281/zenodo.15205532" (https://doi.org/10.5281/zenodo.15205532)
+
+---
+
 Current Canonical Status
 
 Recursive Fractal Cosmology (RFC) is currently organized as a triad-first generative ontology of existence, not as a standard fitted cosmological model and not as a loose collection of independent simulation modules.
@@ -77,7 +97,7 @@ The browser-based notebook workflow is retained, but the canonical interpretatio
 
 ""Launch RFC in Binder" (https://mybinder.org/badge_logo.svg)" (https://mybinder.org/v2/gh/Charlie-glitch83/Recursive-Fractal-Cosmology/HEAD?labpath=notebooks%2FRFC_Simulator.ipynb)
 
-Launch RFC Simulation Lab in your browser
+Launch RFC Simulation Lab in your browser.
 Use this notebook to inspect the RFC simulation architecture, frozen packet, module outputs, and downstream validation logic.
 
 Recommended current notebook order:
@@ -746,12 +766,58 @@ Citing RFC
 Current canonical preprint:
 
 Edward, Allan. Recursive Fractal Cosmology: A Generative Ontology of Existence.
+DOI: "10.5281/zenodo.20473033" (https://doi.org/10.5281/zenodo.20473033)
+Repository: "Recursive-Fractal-Cosmology on GitHub" (https://github.com/Charlie-glitch83/Recursive-Fractal-Cosmology/tree/main)
+
+BibTeX citation:
+
+@misc{edward_rfc_generative_ontology,
+  author       = {Edward, Allan},
+  title        = {Recursive Fractal Cosmology: A Generative Ontology of Existence},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.20473033},
+  url          = {https://doi.org/10.5281/zenodo.20473033},
+  note         = {Preprint and computational repository: https://github.com/Charlie-glitch83/Recursive-Fractal-Cosmology/tree/main}
+}
 
 Previous RFC preprints / presentations remain part of the development history:
 
-RFC Presentation 24
-RFC Presentation 25
-RFC Presentation 26
+Edward, Allan. Recursive Fractal Cosmology: A Theory of Everything that provides more Answers than Questions.
+DOI: "10.5281/zenodo.15250393" (https://doi.org/10.5281/zenodo.15250393)
+
+@misc{edward_rfc_theory_of_everything,
+  author       = {Edward, Allan},
+  title        = {Recursive Fractal Cosmology: A Theory of Everything that provides more Answers than Questions},
+  year         = {2025},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.15250393},
+  url          = {https://doi.org/10.5281/zenodo.15250393}
+}
+
+Edward, Allan. Recursive Fractal Cosmology: A unified symbolic framework for Emergence, Structure, and Observer Identity.
+DOI: "10.5281/zenodo.15234638" (https://doi.org/10.5281/zenodo.15234638)
+
+@misc{edward_rfc_symbolic_framework,
+  author       = {Edward, Allan},
+  title        = {Recursive Fractal Cosmology: A unified symbolic framework for Emergence, Structure, and Observer Identity},
+  year         = {2025},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.15234638},
+  url          = {https://doi.org/10.5281/zenodo.15234638}
+}
+
+Edward, Allan. Recursive Fractal Cosmology: A symbolic field theory of emergence, identity, and time.
+DOI: "10.5281/zenodo.15205532" (https://doi.org/10.5281/zenodo.15205532)
+
+@misc{edward_rfc_symbolic_field_theory,
+  author       = {Edward, Allan},
+  title        = {Recursive Fractal Cosmology: A symbolic field theory of emergence, identity, and time},
+  year         = {2025},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.15205532},
+  url          = {https://doi.org/10.5281/zenodo.15205532}
+}
 
 Current status of earlier presentations:
 
