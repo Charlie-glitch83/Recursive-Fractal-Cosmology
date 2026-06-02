@@ -1,0 +1,627 @@
+{
+  "file": "ValidationScreens_U_V_W_X_Y2_Z_QG.json",
+  "schemaVersion": "2026-06-paper-reproduction-v1",
+  "canonicalPreprint": "Recursive Fractal Cosmology: A Generative Ontology of Existence",
+  "author": "Allan Edward",
+  "purpose": "Canonical standalone downstream validation-screen package for RFC paper reproduction. This file contains Modules U, V, W, X, Y2, Z, and QG only.",
+  "globalRule": "Validation screens consume the frozen packet. They do not choose, fit, or retune the frozen packet. External reference values are comparison contexts only unless a module is explicitly labeled exploratory.",
+  "requiredCompanionFiles": [
+    "Module_G_R_N_S_T_FrozenPacket.json",
+    "SimulationConfigs.json",
+    "RFC_Simulator.ipynb",
+    "REPRODUCIBILITY.md"
+  ],
+  "paperReproductionOrder": [
+    "G",
+    "R",
+    "N",
+    "DownstreamPhysicalProjection",
+    "DimensionlessValidation",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y2",
+    "Z",
+    "QG"
+  ],
+  "validationScreenOrder": [
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y2",
+    "Z",
+    "QG"
+  ],
+  "sourcePolicy": {
+    "canonicalStandaloneFile": "ValidationScreens_U_V_W_X_Y2_Z_QG.json",
+    "frozenPacketMirror": "Module_G_R_N_S_T_FrozenPacket.json may mirror these validation screens for backward compatibility.",
+    "simulationConfigFallback": "SimulationConfigs.json may contain lightweight summaries so the notebook can still display validation screens if this standalone file is absent.",
+    "synchronizationRule": "If any validation value is updated, synchronize this file, the frozen-packet mirror, and the SimulationConfigs fallback.",
+    "noRetuningRule": "Validation-screen comparisons must not be used to retune Module G, Module R, Module N, Module S, or Module T."
+  },
+  "claimBoundarySummary": "RFC is internally coherent as a deterministic triadic derivation system with several completed or partial downstream validation screens. It is not yet fully externally validated as a complete laboratory theory of all constants and observables.",
+  "validationScreens": {
+    "U": {
+      "module": "U",
+      "description": "One-Anchor Constant Table Screen",
+      "currentStatus": "completed_first_pass_screen",
+      "runMode": "reproducible_constant_screen",
+      "consumesFrozenPacket": true,
+      "usesModuleS": true,
+      "usesModuleT": true,
+      "mayRetuneFrozenPacket": false,
+      "additionalAnchorsUsed": false,
+      "referenceValuesUsedOnlyAfterPrediction": true,
+      "scope": "One-anchor electromagnetic and atomic constants only.",
+      "anchorPolicy": {
+        "oneAnchorUsed": true,
+        "anchorChoice": "electronRestEnergy",
+        "anchorUsedAsPrediction": false,
+        "interpretation": "The electron rest energy is a unit bridge anchor only. It is not counted as an independent prediction."
+      },
+      "summary": {
+        "independentConstantsScored": 12,
+        "meanAbsPercentError": 0.07412,
+        "medianAbsPercentError": 0.07407,
+        "minAbsPercentError": 9.64897e-06,
+        "maxAbsPercentError": 0.14827,
+        "within0p1Percent": 8,
+        "within1Percent": 12,
+        "within5Percent": 12
+      },
+      "formulaDefinitions": {
+        "alpha_T_inverse": "Module T mapped inverse coupling",
+        "alpha_T": "1 / alpha_T_inverse",
+        "electronMassKg": "(electronRestEnergy_MeV * MeV_to_J) / c^2",
+        "lambdaCbar": "hbar / (m_e * c)",
+        "lambdaC": "h / (m_e * c)",
+        "bohrRadius": "lambdaCbar / alpha_T",
+        "classicalElectronRadius": "alpha_T * lambdaCbar",
+        "hartreeEV": "alpha_T^2 * m_e * c^2 / eV_to_J",
+        "rydbergEV": "hartreeEV / 2",
+        "rydbergConstant": "alpha_T^2 * m_e * c / (2*h)",
+        "thomsonCrossSection": "(8*pi/3) * classicalElectronRadius^2",
+        "bohrMagneton": "e*hbar/(2*m_e)"
+      },
+      "results": {
+        "alphaInverse": {
+          "RFC": 136.935,
+          "reference": 137.036,
+          "absPercentError": 0.07405,
+          "scored": true
+        },
+        "alpha": {
+          "RFC": 0.00730276,
+          "reference": 0.00729735,
+          "absPercentError": 0.0741,
+          "scored": true
+        },
+        "electronMassEnergyAnchor_MeV": {
+          "RFC": 0.510999,
+          "reference": 0.510999,
+          "status": "anchor_not_counted_as_prediction",
+          "scored": false
+        },
+        "electronMassKg": {
+          "RFC": 9.10938e-31,
+          "reference": 9.10938e-31,
+          "absPercentError": 9.64938e-06,
+          "scored": true
+        },
+        "lambdaCbar_m": {
+          "RFC": 3.86159e-13,
+          "reference": 3.86159e-13,
+          "absPercentError": 9.78527e-06,
+          "scored": true
+        },
+        "lambdaC_m": {
+          "RFC": 2.42631e-12,
+          "reference": 2.42631e-12,
+          "absPercentError": 9.64937e-06,
+          "scored": true
+        },
+        "bohrRadius_m": {
+          "RFC": 5.28785e-11,
+          "reference": 5.29177e-11,
+          "absPercentError": 0.07406,
+          "scored": true
+        },
+        "classicalElectronRadius_m": {
+          "RFC": 2.82003e-15,
+          "reference": 2.81794e-15,
+          "absPercentError": 0.07409,
+          "scored": true
+        },
+        "hartreeEnergy_eV": {
+          "RFC": 27.2517,
+          "reference": 27.2114,
+          "absPercentError": 0.14827,
+          "scored": true
+        },
+        "rydbergEnergy_eV": {
+          "RFC": 13.6259,
+          "reference": 13.6057,
+          "absPercentError": 0.14827,
+          "scored": true
+        },
+        "rydbergConstant_mInv": {
+          "RFC": 10990000.0,
+          "reference": 10973700.0,
+          "absPercentError": 0.14827,
+          "scored": true
+        },
+        "thomsonCrossSection_m2": {
+          "RFC": 6.66232e-29,
+          "reference": 6.65246e-29,
+          "absPercentError": 0.14824,
+          "scored": true
+        },
+        "bohrMagneton_JperT": {
+          "RFC": 9.27401e-24,
+          "reference": 9.27401e-24,
+          "absPercentError": 9.64897e-06,
+          "scored": true
+        }
+      },
+      "notCompleted": [
+        "Gravitational constant G",
+        "hadron masses",
+        "weak-sector constants",
+        "full particle spectrum",
+        "full Standard Model parameter table"
+      ],
+      "claimBoundary": "Completed first-pass one-anchor electromagnetic/atomic constant table screen only. Not a full derivation of all physical constants; does not cover G, hadron masses, weak-sector constants, or the full particle spectrum."
+    },
+    "V": {
+      "module": "V",
+      "description": "Precision Cosmology Compressed-Parameter Screen",
+      "currentStatus": "partial_compressed_parameter_proxy",
+      "runMode": "compressed_proxy_screen",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "referenceValuesUsedOnlyAfterPrediction": true,
+      "scope": "Compressed cosmological parameter proxies only.",
+      "summary": {
+        "H0ProxyErrorPercent": 2.69666,
+        "OmegaMProxyErrorPercent": 4.31988,
+        "OmegaLambdaProxyErrorPercent": 1.98651,
+        "sigma8ProxyErrorPercent": 0.15425,
+        "nsProxyErrorPercent": 0.96548,
+        "rProxyValue": 0.0108071,
+        "rProxyStatus": "PASS",
+        "rReferenceUpperBound": 0.06
+      },
+      "results": {
+        "H0_proxy": {
+          "RFC": 69.2176,
+          "reference": 67.4,
+          "absPercentError": 2.69666,
+          "boundary": "compressed proxy"
+        },
+        "Omega_m_proxy": {
+          "RFC": 0.328608,
+          "reference": 0.315,
+          "absPercentError": 4.31988,
+          "boundary": "compressed proxy"
+        },
+        "Omega_Lambda_proxy": {
+          "RFC": 0.671392,
+          "reference": 0.685,
+          "absPercentError": 1.98651,
+          "boundary": "compressed proxy"
+        },
+        "sigma8_proxy": {
+          "RFC": 0.812251,
+          "reference": 0.811,
+          "absPercentError": 0.15425,
+          "boundary": "compressed proxy"
+        },
+        "n_s_proxy": {
+          "RFC": 0.974317,
+          "reference": 0.965,
+          "absPercentError": 0.96548,
+          "boundary": "compressed proxy"
+        },
+        "r_proxy": {
+          "RFC": 0.0108071,
+          "referenceBound": "< 0.06",
+          "status": "PASS",
+          "boundary": "upper-bound proxy"
+        }
+      },
+      "notCompleted": [
+        "BAO likelihood analysis",
+        "SNe distance-modulus fit",
+        "CMB TT spectra",
+        "CMB TE spectra",
+        "CMB EE spectra",
+        "CLASS/CAMB Boltzmann-solver comparison",
+        "matter power spectrum",
+        "full precision-cosmology posterior analysis"
+      ],
+      "claimBoundary": "Compressed-parameter proxy only; not full precision cosmology, not BAO/SNe/CMB spectra validation, and not a substitute for CLASS/CAMB or likelihood-level comparison."
+    },
+    "W": {
+      "module": "W",
+      "description": "BBN Light-Abundance Proxy Screen",
+      "currentStatus": "partial_light_abundance_proxy",
+      "runMode": "light_abundance_proxy_screen",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "referenceValuesUsedOnlyAfterPrediction": true,
+      "scope": "Light-abundance proxy screen only.",
+      "summary": {
+        "YpAbsPercentError": 1.74612,
+        "DoverHAbsPercentError": 3.85043,
+        "He3overHAbsPercentError": 1.08071,
+        "Li7overHAbsPercentError": 181.25,
+        "lithiumStatus": "known_lithium_gap_unresolved"
+      },
+      "results": {
+        "Yp": {
+          "RFC": 0.249278,
+          "reference": 0.245,
+          "absPercentError": 1.74612,
+          "status": "proxy"
+        },
+        "D_over_H": {
+          "RFC": 2.45181e-05,
+          "reference": 2.55e-05,
+          "absPercentError": 3.85043,
+          "status": "proxy"
+        },
+        "He3_over_H": {
+          "RFC": 1.01081e-05,
+          "reference": 1e-05,
+          "absPercentError": 1.08071,
+          "status": "proxy"
+        },
+        "Li7_over_H": {
+          "RFC": 4.5e-10,
+          "reference": 1.6e-10,
+          "absPercentError": 181.25,
+          "status": "known_lithium_gap_unresolved"
+        }
+      },
+      "notCompleted": [
+        "full BBN nuclear reaction network",
+        "temperature-time integration with reaction-rate table",
+        "uncertainty propagation for reaction rates",
+        "professional BBN code comparison"
+      ],
+      "claimBoundary": "BBN light-abundance proxy only. Lithium-7 remains unresolved. This is not a professional full nuclear reaction network."
+    },
+    "X": {
+      "module": "X",
+      "description": "CP/EDM Bound Screen",
+      "currentStatus": "partial_bound_and_proxy_screen",
+      "runMode": "bound_and_proxy_screen",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "referenceValuesUsedOnlyAfterPrediction": true,
+      "scope": "EDM bound proxies and baryon eta proxy.",
+      "summary": {
+        "electronEDMStatus": "PASS",
+        "neutronEDMStatus": "PASS",
+        "baryonEtaAbsPercentError": 0.01481,
+        "legacyCKMPhaseProxyErrorPercentBeforeY2": 157.12833,
+        "legacyPMNSPhaseProxyErrorPercentBeforeY2": 82.00318
+      },
+      "results": {
+        "electronEDMProxy": {
+          "RFC": 3.94987e-39,
+          "bound": "< 1.1e-29 e cm",
+          "status": "PASS"
+        },
+        "neutronEDMProxy": {
+          "RFC": 3.41089e-31,
+          "bound": "< 1.8e-26 e cm",
+          "status": "PASS"
+        },
+        "baryonEtaProxy": {
+          "RFC": 6.0991e-10,
+          "reference": 6.1e-10,
+          "absPercentError": 0.01481,
+          "status": "proxy"
+        },
+        "legacyCKMPhaseProxyBeforeY2": {
+          "absPercentError": 157.12833,
+          "status": "superseded_by_Y2_exploratory_screen"
+        },
+        "legacyPMNSPhaseProxyBeforeY2": {
+          "absPercentError": 82.00318,
+          "status": "superseded_by_Y2_exploratory_screen"
+        }
+      },
+      "notCompleted": [
+        "full EFT-level CP/EDM calculation",
+        "full baryogenesis calculation",
+        "full CKM sector derivation",
+        "full PMNS sector derivation",
+        "renormalized particle-physics treatment"
+      ],
+      "claimBoundary": "EDM bound proxies and baryon eta proxy are strong first-pass screens. Full EFT-level CP/EDM, baryogenesis, CKM, and PMNS validation remains future work."
+    },
+    "Y2": {
+      "module": "Y2",
+      "description": "Particle-Sector Refinement Candidate Screen",
+      "currentStatus": "exploratory_candidate_map",
+      "runMode": "exploratory_candidate_map",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "usesReferenceValuesForMapSelection": true,
+      "requiresFreezeAndRetest": true,
+      "mustBecomeY3BeforeIndependentValidationClaim": true,
+      "scope": "Exploratory candidate refinement of quark masses, CKM angles/phases, and PMNS angles/phases.",
+      "summary": {
+        "quarkMassMeanErrorPercent": 1.74577,
+        "quarkMassMaxErrorPercent": 2.70668,
+        "CKMMeanAngleErrorPercent": 10.3163,
+        "CKMPhaseCircularErrorDegrees": 0.00981,
+        "CKMSinPhaseErrorPercent": 0.00674,
+        "PMNSMeanAngleErrorPercent": 0.11857,
+        "PMNSPhaseCircularErrorDegrees": 0.00187,
+        "PMNSSinPhaseErrorPercent": 0.01233,
+        "remainingWeakPoint": "CKM theta13"
+      },
+      "results": {
+        "quarkMassScreen": {
+          "method": "QCD/log-space dressing layer",
+          "basis": "depth, generation, up/down, depth*up",
+          "status": "exploratory calibrated candidate",
+          "meanQuarkErrorPercent": 1.74577,
+          "maxQuarkErrorPercent": 2.70668,
+          "quarks": {
+            "u": {
+              "RFC_MeV": 2.17623,
+              "reference_MeV": 2.16,
+              "absPercentError": 0.75117
+            },
+            "d": {
+              "RFC_MeV": 4.64097,
+              "reference_MeV": 4.67,
+              "absPercentError": 0.62169
+            },
+            "s": {
+              "RFC_MeV": 95.3491,
+              "reference_MeV": 93,
+              "absPercentError": 2.52591
+            },
+            "c": {
+              "RFC_MeV": 1235.63,
+              "reference_MeV": 1270,
+              "absPercentError": 2.70668
+            },
+            "b": {
+              "RFC_MeV": 4102.52,
+              "reference_MeV": 4180,
+              "absPercentError": 1.85351
+            },
+            "t": {
+              "RFC_MeV": 176242,
+              "reference_MeV": 172760,
+              "absPercentError": 2.01567
+            }
+          }
+        },
+        "CKMScreen": {
+          "method": "Wolfenstein-like RFC hierarchy with modular phase comparison",
+          "theta12_deg": {
+            "RFC": 13.0212,
+            "reference": 13.04,
+            "absPercentError": 0.14407
+          },
+          "theta23_deg": {
+            "RFC": 2.44121,
+            "reference": 2.38,
+            "absPercentError": 2.57199
+          },
+          "theta13_deg": {
+            "RFC": 0.144252,
+            "reference": 0.201,
+            "absPercentError": 28.23284
+          },
+          "phase_rad": {
+            "RFC": 1.19583,
+            "reference": 1.196,
+            "circularErrorDegrees": 0.00981
+          },
+          "sinPhase": {
+            "RFC": 0.93052,
+            "reference": 0.930582,
+            "absPercentError": 0.00674
+          },
+          "lambdaPowerK": 2,
+          "ACorrectionK": 3,
+          "BCorrectionK": 8,
+          "remainingWeakPoint": "CKM theta13"
+        },
+        "PMNSScreen": {
+          "method": "Large-angle neutrino mixing architecture with modular phase comparison",
+          "theta12_deg": {
+            "RFC": 33.4272,
+            "reference": 33.44,
+            "absPercentError": 0.03822
+          },
+          "theta23_deg": {
+            "RFC": 49.0634,
+            "reference": 49.0,
+            "absPercentError": 0.1294
+          },
+          "theta13_deg": {
+            "RFC": 8.58612,
+            "reference": 8.57,
+            "absPercentError": 0.18808
+          },
+          "phase_rad": {
+            "RFC": 3.39997,
+            "reference": 3.4,
+            "circularErrorDegrees": 0.00187
+          },
+          "sinPhase": {
+            "RFC": -0.25551,
+            "reference": -0.255541,
+            "absPercentError": 0.01233
+          },
+          "theta12MapParams": [
+            3,
+            -4,
+            -7
+          ],
+          "theta13MapParams": [
+            0.5,
+            -3,
+            10
+          ],
+          "theta23MapParams": [
+            2,
+            -5,
+            2
+          ],
+          "meanAngleErrorPercent": 0.11857
+        }
+      },
+      "notCompleted": [
+        "freeze candidate formulas into Module Y3",
+        "independent retest without map selection",
+        "full Standard Model mass and mixing derivation",
+        "neutrino mass ordering and absolute mass scale validation",
+        "CKM theta13 improvement"
+      ],
+      "claimBoundary": "Exploratory candidate map only. Because Y2 uses reference values for map selection, formulas must be frozen into a later Y3 validation screen before independent validation claims are made."
+    },
+    "Z": {
+      "module": "Z",
+      "description": "Observer, Branching, Neural, EEG Validation Harness",
+      "currentStatus": "model_screen_data_needed",
+      "runMode": "model_screen_future_data",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "scope": "Observer/branching model screen plus neural/EEG target signatures.",
+      "summary": {
+        "observerDivergenceStatus": "PASS",
+        "branchFinalOverMaxStatus": "PASS",
+        "decoherenceProxyStatus": "PASS",
+        "memoryCorrelationStatus": "PASS",
+        "neuralFractalDAbsPercentError": 1.60988,
+        "avalancheExponentAbsPercentError": 0.70387,
+        "spectralSlopeAbsPercentError": 1.28415
+      },
+      "results": {
+        "observerBranching": {
+          "observerDivergence": {
+            "RFC": 7.49536e-06,
+            "target": "< 1e-5",
+            "status": "PASS"
+          },
+          "branchFinalOverMax": {
+            "RFC": 0.0599657,
+            "target": "< 0.1",
+            "status": "PASS"
+          },
+          "decoherenceProxy": {
+            "RFC": 5.73826e-08,
+            "target": "< 1e-6",
+            "status": "PASS"
+          },
+          "memoryCorrelation": {
+            "RFC": 0.873361,
+            "target": "> 0.8",
+            "status": "PASS"
+          }
+        },
+        "neuralEEGTargets": {
+          "neuralFractalD": {
+            "RFC": 2.48944,
+            "target": 2.45,
+            "absPercentError": 1.60988,
+            "status": "needs_EEG_data"
+          },
+          "avalancheExponent": {
+            "RFC": 1.48944,
+            "target": 1.5,
+            "absPercentError": 0.70387,
+            "status": "needs_neural_data"
+          },
+          "spectralSlope": {
+            "RFC": 1.97432,
+            "target": 2.0,
+            "absPercentError": 1.28415,
+            "status": "needs_EEG_data"
+          }
+        }
+      },
+      "notCompleted": [
+        "real EEG dataset validation",
+        "real neural avalanche dataset validation",
+        "formal measurement-model validation",
+        "external observer-branching empirical test"
+      ],
+      "claimBoundary": "Observer/branching model screen passes internally. Neural and EEG outputs are target signatures only until tested on real datasets."
+    },
+    "QG": {
+      "module": "QG",
+      "description": "Finite Spin-Foam Transition-Amplitude Audit",
+      "currentStatus": "finite_amplitude_audit_passed",
+      "runMode": "finite_audit_screen",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "scope": "Finite transition-amplitude audit only.",
+      "summary": {
+        "finiteAmplitudeN18": 1.04394,
+        "finiteAmplitudeN40": 1.04394,
+        "relativeTail": 4.81169e-12,
+        "relativeTailStatus": "PASS",
+        "unitarityProxyStatus": "PASS",
+        "refinementProxyStatus": "PASS",
+        "geometryCoherenceStatus": "PASS"
+      },
+      "results": {
+        "finiteAmplitudeN18": 1.04394,
+        "finiteAmplitudeN40": 1.04394,
+        "relativeTail": 4.81169e-12,
+        "relativeTailStatus": "PASS",
+        "unitarityProxy": 1,
+        "unitarityProxyStatus": "PASS",
+        "refinementProxy": 1,
+        "refinementProxyStatus": "PASS",
+        "geometryCoherence": 0.940535,
+        "geometryCoherenceStatus": "PASS"
+      },
+      "notCompleted": [
+        "full spin-foam quantum-gravity proof",
+        "continuum theorem",
+        "complete transition-amplitude formalism",
+        "renormalization/refinement proof"
+      ],
+      "claimBoundary": "Finite spin-foam transition-amplitude audit only. Not a full quantum-gravity proof, continuum theorem, or complete spin-foam formalism."
+    }
+  },
+  "verificationChecks": {
+    "containsOnlyDownstreamValidationScreens": true,
+    "containsModuleU": true,
+    "containsModuleV": true,
+    "containsModuleW": true,
+    "containsModuleX": true,
+    "containsModuleY2": true,
+    "containsModuleZ": true,
+    "containsModuleQG": true,
+    "moduleWNameAvoidsFullReactionNetworkOverclaim": true,
+    "moduleY2MarkedExploratory": true,
+    "allScreensConsumeFrozenPacket": true,
+    "allScreensMayRetuneFrozenPacket": false
+  },
+  "futureWork": [
+    "Freeze Module Y2 formulas into Module Y3 and retest without reference-based map selection.",
+    "Run full BAO/SNe/CMB spectra validation.",
+    "Run a professional BBN nuclear reaction network.",
+    "Develop full EFT-level CP/EDM and baryogenesis calculation.",
+    "Compare Module Z neural predictions against real EEG/neural avalanche datasets.",
+    "Develop full spin-foam transition-amplitude derivation and continuum/refinement proof.",
+    "Obtain independent reproduction and peer-review-level audit."
+  ]
+}
