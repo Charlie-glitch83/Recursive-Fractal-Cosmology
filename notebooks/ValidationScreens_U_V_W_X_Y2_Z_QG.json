@@ -1,0 +1,930 @@
+{
+  "file": "ValidationScreens_U_V_W_X_Y2_Z_QG.json",
+  "schemaVersion": "2026-06-presentation29-revised-W2R-W3-W4-CRTrace-v1",
+  "canonicalPreprint": "Recursive Fractal Cosmology: The Triadic Emergence of Existence -- A Triadic Theorem",
+  "author": "Allan Edward",
+  "purpose": "Canonical standalone downstream validation-screen package for revised Presentation 29. Contains U, V, historical W, W2-R, W3, W4, CR-Trace, X, Y2, Z, and QG.",
+  "globalRule": "Validation screens consume the frozen packet. They do not choose, fit, or retune the frozen packet. W is a historical scalar-lane diagnostic superseded by W2-R.",
+  "requiredCompanionFiles": [
+    "Module_G_R_N_S_T_FrozenPacket.json",
+    "SimulationConfigs.json",
+    "RFC_Simulator.ipynb",
+    "REPRODUCIBILITY.md"
+  ],
+  "paperReproductionOrder": [
+    "G",
+    "R",
+    "N",
+    "DownstreamPhysicalProjection",
+    "DimensionlessValidation",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "W2R",
+    "W3",
+    "W4",
+    "CRTrace",
+    "X",
+    "Y2",
+    "Z",
+    "QG"
+  ],
+  "validationScreenOrder": [
+    "U",
+    "V",
+    "W",
+    "W2R",
+    "W3",
+    "W4",
+    "CRTrace",
+    "X",
+    "Y2",
+    "Z",
+    "QG"
+  ],
+  "sourcePolicy": {
+    "canonicalStandaloneFile": "ValidationScreens_U_V_W_X_Y2_Z_QG.json",
+    "frozenPacketMirror": "Module_G_R_N_S_T_FrozenPacket.json may mirror these validation screens for backward compatibility.",
+    "simulationConfigFallback": "SimulationConfigs.json may contain lightweight summaries so the notebook can still display validation screens if this standalone file is absent.",
+    "synchronizationRule": "If any validation value is updated, synchronize this file, the frozen-packet mirror, and the SimulationConfigs fallback, including W2-R/W3/W4/CR-Trace.",
+    "noRetuningRule": "Validation-screen comparisons must not be used to retune Module G, Module R, Module N, Module S, or Module T."
+  },
+  "claimBoundarySummary": "RFC is internally coherent as a deterministic triadic derivation system with revised theorem/proxy closeouts for W2-R, W3, W4, and CR-Trace. External public-code BBN, stellar-yield, supernova, neutron-star-merger, galactic chemical-evolution, precision-cosmology, particle-sector, neural, and quantum-gravity validation remain pending where stated.",
+  "validationScreens": {
+    "U": {
+      "module": "U",
+      "description": "One-Anchor Constant Table Screen",
+      "currentStatus": "completed_first_pass_screen",
+      "runMode": "reproducible_constant_screen",
+      "consumesFrozenPacket": true,
+      "usesModuleS": true,
+      "usesModuleT": true,
+      "mayRetuneFrozenPacket": false,
+      "additionalAnchorsUsed": false,
+      "referenceValuesUsedOnlyAfterPrediction": true,
+      "scope": "One-anchor electromagnetic and atomic constants only.",
+      "anchorPolicy": {
+        "oneAnchorUsed": true,
+        "anchorChoice": "electronRestEnergy",
+        "anchorUsedAsPrediction": false,
+        "interpretation": "The electron rest energy is a unit bridge anchor only. It is not counted as an independent prediction."
+      },
+      "summary": {
+        "independentConstantsScored": 12,
+        "meanAbsPercentError": 0.07412,
+        "medianAbsPercentError": 0.07407,
+        "minAbsPercentError": 9.64897e-06,
+        "maxAbsPercentError": 0.14827,
+        "within0p1Percent": 8,
+        "within1Percent": 12,
+        "within5Percent": 12
+      },
+      "formulaDefinitions": {
+        "alpha_T_inverse": "Module T mapped inverse coupling",
+        "alpha_T": "1 / alpha_T_inverse",
+        "electronMassKg": "(electronRestEnergy_MeV * MeV_to_J) / c^2",
+        "lambdaCbar": "hbar / (m_e * c)",
+        "lambdaC": "h / (m_e * c)",
+        "bohrRadius": "lambdaCbar / alpha_T",
+        "classicalElectronRadius": "alpha_T * lambdaCbar",
+        "hartreeEV": "alpha_T^2 * m_e * c^2 / eV_to_J",
+        "rydbergEV": "hartreeEV / 2",
+        "rydbergConstant": "alpha_T^2 * m_e * c / (2*h)",
+        "thomsonCrossSection": "(8*pi/3) * classicalElectronRadius^2",
+        "bohrMagneton": "e*hbar/(2*m_e)"
+      },
+      "results": {
+        "alphaInverse": {
+          "RFC": 136.935,
+          "reference": 137.036,
+          "absPercentError": 0.07405,
+          "scored": true
+        },
+        "alpha": {
+          "RFC": 0.00730276,
+          "reference": 0.00729735,
+          "absPercentError": 0.0741,
+          "scored": true
+        },
+        "electronMassEnergyAnchor_MeV": {
+          "RFC": 0.510999,
+          "reference": 0.510999,
+          "status": "anchor_not_counted_as_prediction",
+          "scored": false
+        },
+        "electronMassKg": {
+          "RFC": 9.10938e-31,
+          "reference": 9.10938e-31,
+          "absPercentError": 9.64938e-06,
+          "scored": true
+        },
+        "lambdaCbar_m": {
+          "RFC": 3.86159e-13,
+          "reference": 3.86159e-13,
+          "absPercentError": 9.78527e-06,
+          "scored": true
+        },
+        "lambdaC_m": {
+          "RFC": 2.42631e-12,
+          "reference": 2.42631e-12,
+          "absPercentError": 9.64937e-06,
+          "scored": true
+        },
+        "bohrRadius_m": {
+          "RFC": 5.28785e-11,
+          "reference": 5.29177e-11,
+          "absPercentError": 0.07406,
+          "scored": true
+        },
+        "classicalElectronRadius_m": {
+          "RFC": 2.82003e-15,
+          "reference": 2.81794e-15,
+          "absPercentError": 0.07409,
+          "scored": true
+        },
+        "hartreeEnergy_eV": {
+          "RFC": 27.2517,
+          "reference": 27.2114,
+          "absPercentError": 0.14827,
+          "scored": true
+        },
+        "rydbergEnergy_eV": {
+          "RFC": 13.6259,
+          "reference": 13.6057,
+          "absPercentError": 0.14827,
+          "scored": true
+        },
+        "rydbergConstant_mInv": {
+          "RFC": 10990000.0,
+          "reference": 10973700.0,
+          "absPercentError": 0.14827,
+          "scored": true
+        },
+        "thomsonCrossSection_m2": {
+          "RFC": 6.66232e-29,
+          "reference": 6.65246e-29,
+          "absPercentError": 0.14824,
+          "scored": true
+        },
+        "bohrMagneton_JperT": {
+          "RFC": 9.27401e-24,
+          "reference": 9.27401e-24,
+          "absPercentError": 9.64897e-06,
+          "scored": true
+        }
+      },
+      "notCompleted": [
+        "Gravitational constant G",
+        "hadron masses",
+        "weak-sector constants",
+        "full particle spectrum",
+        "full Standard Model parameter table"
+      ],
+      "claimBoundary": "Completed first-pass one-anchor electromagnetic/atomic constant table screen only. Not a full derivation of all physical constants; does not cover G, hadron masses, weak-sector constants, or the full particle spectrum."
+    },
+    "V": {
+      "module": "V",
+      "description": "Precision Cosmology Compressed-Parameter Screen",
+      "currentStatus": "partial_compressed_parameter_proxy",
+      "runMode": "compressed_proxy_screen",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "referenceValuesUsedOnlyAfterPrediction": true,
+      "scope": "Compressed cosmological parameter proxies only.",
+      "summary": {
+        "H0ProxyErrorPercent": 2.69666,
+        "OmegaMProxyErrorPercent": 4.31988,
+        "OmegaLambdaProxyErrorPercent": 1.98651,
+        "sigma8ProxyErrorPercent": 0.15425,
+        "nsProxyErrorPercent": 0.96548,
+        "rProxyValue": 0.0108071,
+        "rProxyStatus": "PASS",
+        "rReferenceUpperBound": 0.06
+      },
+      "results": {
+        "H0_proxy": {
+          "RFC": 69.2176,
+          "reference": 67.4,
+          "absPercentError": 2.69666,
+          "boundary": "compressed proxy"
+        },
+        "Omega_m_proxy": {
+          "RFC": 0.328608,
+          "reference": 0.315,
+          "absPercentError": 4.31988,
+          "boundary": "compressed proxy"
+        },
+        "Omega_Lambda_proxy": {
+          "RFC": 0.671392,
+          "reference": 0.685,
+          "absPercentError": 1.98651,
+          "boundary": "compressed proxy"
+        },
+        "sigma8_proxy": {
+          "RFC": 0.812251,
+          "reference": 0.811,
+          "absPercentError": 0.15425,
+          "boundary": "compressed proxy"
+        },
+        "n_s_proxy": {
+          "RFC": 0.974317,
+          "reference": 0.965,
+          "absPercentError": 0.96548,
+          "boundary": "compressed proxy"
+        },
+        "r_proxy": {
+          "RFC": 0.0108071,
+          "referenceBound": "< 0.06",
+          "status": "PASS",
+          "boundary": "upper-bound proxy"
+        }
+      },
+      "notCompleted": [
+        "BAO likelihood analysis",
+        "SNe distance-modulus fit",
+        "CMB TT spectra",
+        "CMB TE spectra",
+        "CMB EE spectra",
+        "CLASS/CAMB Boltzmann-solver comparison",
+        "matter power spectrum",
+        "full precision-cosmology posterior analysis"
+      ],
+      "claimBoundary": "Compressed-parameter proxy only; not full precision cosmology, not BAO/SNe/CMB spectra validation, and not a substitute for CLASS/CAMB or likelihood-level comparison."
+    },
+    "W": {
+      "module": "W",
+      "description": "Historical scalar-lane BBN light-abundance proxy screen",
+      "currentStatus": "historical_scalar_lane_diagnostic_superseded_by_W2R",
+      "canonicalRole": "Historical diagnostic showing why the revised W2-R triadic-weight closeout was needed",
+      "runMode": "historical_diagnostic_proxy_screen",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "paperReproductionPath": true,
+      "referenceValuesUsedOnlyAfterPrediction": true,
+      "scope": "Historical BBN scalar-lane diagnostic only; retained to explain the Li7 failure corrected by W2-R.",
+      "summary": {
+        "historicalOldScalarLi7OverObserved": 3.12534,
+        "historicalStatus": "superseded_by_W2R",
+        "W2R_TriadicLi7OverObserved": 0.999643,
+        "interpretation": "The old scalar lane erased CIF/QV/RFL channel structure and left Li7 overproduced. W2-R restores triadic channel weights."
+      },
+      "results": {
+        "Yp_historicalProxy": {
+          "RFC": 0.249278,
+          "reference": 0.245,
+          "absPercentError": 1.74612,
+          "status": "historical_proxy"
+        },
+        "D_over_H_historicalProxy": {
+          "RFC": 2.45181e-05,
+          "reference": 2.55e-05,
+          "absPercentError": 3.85043,
+          "status": "historical_proxy"
+        },
+        "He3_over_H_historicalProxy": {
+          "RFC": 1.01081e-05,
+          "reference": 1e-05,
+          "absPercentError": 1.08071,
+          "status": "historical_proxy"
+        },
+        "Li7_scalar_over_observed": {
+          "ratio": 3.12534,
+          "status": "historical_failure_superseded_by_W2R"
+        }
+      },
+      "supersededBy": "W2R",
+      "claimBoundary": "Historical scalar-lane BBN proxy retained only to show the old Li7 wall. The active revised internal BBN closeout is W2-R. This historical W screen is not a professional BBN nuclear reaction network and should not be read as the current BBN result."
+    },
+    "X": {
+      "module": "X",
+      "description": "CP/EDM Bound Screen",
+      "currentStatus": "partial_bound_and_proxy_screen",
+      "runMode": "bound_and_proxy_screen",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "referenceValuesUsedOnlyAfterPrediction": true,
+      "scope": "EDM bound proxies and baryon eta proxy.",
+      "summary": {
+        "electronEDMStatus": "PASS",
+        "neutronEDMStatus": "PASS",
+        "baryonEtaAbsPercentError": 0.01481,
+        "legacyCKMPhaseProxyErrorPercentBeforeY2": 157.12833,
+        "legacyPMNSPhaseProxyErrorPercentBeforeY2": 82.00318
+      },
+      "results": {
+        "electronEDMProxy": {
+          "RFC": 3.94987e-39,
+          "bound": "< 1.1e-29 e cm",
+          "status": "PASS"
+        },
+        "neutronEDMProxy": {
+          "RFC": 3.41089e-31,
+          "bound": "< 1.8e-26 e cm",
+          "status": "PASS"
+        },
+        "baryonEtaProxy": {
+          "RFC": 6.0991e-10,
+          "reference": 6.1e-10,
+          "absPercentError": 0.01481,
+          "status": "proxy"
+        },
+        "legacyCKMPhaseProxyBeforeY2": {
+          "absPercentError": 157.12833,
+          "status": "superseded_by_Y2_exploratory_screen"
+        },
+        "legacyPMNSPhaseProxyBeforeY2": {
+          "absPercentError": 82.00318,
+          "status": "superseded_by_Y2_exploratory_screen"
+        }
+      },
+      "notCompleted": [
+        "full EFT-level CP/EDM calculation",
+        "full baryogenesis calculation",
+        "full CKM sector derivation",
+        "full PMNS sector derivation",
+        "renormalized particle-physics treatment"
+      ],
+      "claimBoundary": "EDM bound proxies and baryon eta proxy are strong first-pass screens. Full EFT-level CP/EDM, baryogenesis, CKM, and PMNS validation remains future work."
+    },
+    "Y2": {
+      "module": "Y2",
+      "description": "Particle-Sector Refinement Candidate Screen",
+      "currentStatus": "exploratory_candidate_map",
+      "runMode": "exploratory_candidate_map",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "usesReferenceValuesForMapSelection": true,
+      "requiresFreezeAndRetest": true,
+      "mustBecomeY3BeforeIndependentValidationClaim": true,
+      "scope": "Exploratory candidate refinement of quark masses, CKM angles/phases, and PMNS angles/phases.",
+      "summary": {
+        "quarkMassMeanErrorPercent": 1.74577,
+        "quarkMassMaxErrorPercent": 2.70668,
+        "CKMMeanAngleErrorPercent": 10.3163,
+        "CKMPhaseCircularErrorDegrees": 0.00981,
+        "CKMSinPhaseErrorPercent": 0.00674,
+        "PMNSMeanAngleErrorPercent": 0.11857,
+        "PMNSPhaseCircularErrorDegrees": 0.00187,
+        "PMNSSinPhaseErrorPercent": 0.01233,
+        "remainingWeakPoint": "CKM theta13"
+      },
+      "results": {
+        "quarkMassScreen": {
+          "method": "QCD/log-space dressing layer",
+          "basis": "depth, generation, up/down, depth*up",
+          "status": "exploratory calibrated candidate",
+          "meanQuarkErrorPercent": 1.74577,
+          "maxQuarkErrorPercent": 2.70668,
+          "quarks": {
+            "u": {
+              "RFC_MeV": 2.17623,
+              "reference_MeV": 2.16,
+              "absPercentError": 0.75117
+            },
+            "d": {
+              "RFC_MeV": 4.64097,
+              "reference_MeV": 4.67,
+              "absPercentError": 0.62169
+            },
+            "s": {
+              "RFC_MeV": 95.3491,
+              "reference_MeV": 93,
+              "absPercentError": 2.52591
+            },
+            "c": {
+              "RFC_MeV": 1235.63,
+              "reference_MeV": 1270,
+              "absPercentError": 2.70668
+            },
+            "b": {
+              "RFC_MeV": 4102.52,
+              "reference_MeV": 4180,
+              "absPercentError": 1.85351
+            },
+            "t": {
+              "RFC_MeV": 176242,
+              "reference_MeV": 172760,
+              "absPercentError": 2.01567
+            }
+          }
+        },
+        "CKMScreen": {
+          "method": "Wolfenstein-like RFC hierarchy with modular phase comparison",
+          "theta12_deg": {
+            "RFC": 13.0212,
+            "reference": 13.04,
+            "absPercentError": 0.14407
+          },
+          "theta23_deg": {
+            "RFC": 2.44121,
+            "reference": 2.38,
+            "absPercentError": 2.57199
+          },
+          "theta13_deg": {
+            "RFC": 0.144252,
+            "reference": 0.201,
+            "absPercentError": 28.23284
+          },
+          "phase_rad": {
+            "RFC": 1.19583,
+            "reference": 1.196,
+            "circularErrorDegrees": 0.00981
+          },
+          "sinPhase": {
+            "RFC": 0.93052,
+            "reference": 0.930582,
+            "absPercentError": 0.00674
+          },
+          "lambdaPowerK": 2,
+          "ACorrectionK": 3,
+          "BCorrectionK": 8,
+          "remainingWeakPoint": "CKM theta13"
+        },
+        "PMNSScreen": {
+          "method": "Large-angle neutrino mixing architecture with modular phase comparison",
+          "theta12_deg": {
+            "RFC": 33.4272,
+            "reference": 33.44,
+            "absPercentError": 0.03822
+          },
+          "theta23_deg": {
+            "RFC": 49.0634,
+            "reference": 49.0,
+            "absPercentError": 0.1294
+          },
+          "theta13_deg": {
+            "RFC": 8.58612,
+            "reference": 8.57,
+            "absPercentError": 0.18808
+          },
+          "phase_rad": {
+            "RFC": 3.39997,
+            "reference": 3.4,
+            "circularErrorDegrees": 0.00187
+          },
+          "sinPhase": {
+            "RFC": -0.25551,
+            "reference": -0.255541,
+            "absPercentError": 0.01233
+          },
+          "theta12MapParams": [
+            3,
+            -4,
+            -7
+          ],
+          "theta13MapParams": [
+            0.5,
+            -3,
+            10
+          ],
+          "theta23MapParams": [
+            2,
+            -5,
+            2
+          ],
+          "meanAngleErrorPercent": 0.11857
+        }
+      },
+      "notCompleted": [
+        "freeze candidate formulas into Module Y3",
+        "independent retest without map selection",
+        "full Standard Model mass and mixing derivation",
+        "neutrino mass ordering and absolute mass scale validation",
+        "CKM theta13 improvement"
+      ],
+      "claimBoundary": "Exploratory candidate map only. Because Y2 uses reference values for map selection, formulas must be frozen into a later Y3 validation screen before independent validation claims are made."
+    },
+    "Z": {
+      "module": "Z",
+      "description": "Observer, Branching, Neural, EEG Validation Harness",
+      "currentStatus": "model_screen_data_needed",
+      "runMode": "model_screen_future_data",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "scope": "Observer/branching model screen plus neural/EEG target signatures.",
+      "summary": {
+        "observerDivergenceStatus": "PASS",
+        "branchFinalOverMaxStatus": "PASS",
+        "decoherenceProxyStatus": "PASS",
+        "memoryCorrelationStatus": "PASS",
+        "neuralFractalDAbsPercentError": 1.60988,
+        "avalancheExponentAbsPercentError": 0.70387,
+        "spectralSlopeAbsPercentError": 1.28415
+      },
+      "results": {
+        "observerBranching": {
+          "observerDivergence": {
+            "RFC": 7.49536e-06,
+            "target": "< 1e-5",
+            "status": "PASS"
+          },
+          "branchFinalOverMax": {
+            "RFC": 0.0599657,
+            "target": "< 0.1",
+            "status": "PASS"
+          },
+          "decoherenceProxy": {
+            "RFC": 5.73826e-08,
+            "target": "< 1e-6",
+            "status": "PASS"
+          },
+          "memoryCorrelation": {
+            "RFC": 0.873361,
+            "target": "> 0.8",
+            "status": "PASS"
+          }
+        },
+        "neuralEEGTargets": {
+          "neuralFractalD": {
+            "RFC": 2.48944,
+            "target": 2.45,
+            "absPercentError": 1.60988,
+            "status": "needs_EEG_data"
+          },
+          "avalancheExponent": {
+            "RFC": 1.48944,
+            "target": 1.5,
+            "absPercentError": 0.70387,
+            "status": "needs_neural_data"
+          },
+          "spectralSlope": {
+            "RFC": 1.97432,
+            "target": 2.0,
+            "absPercentError": 1.28415,
+            "status": "needs_EEG_data"
+          }
+        }
+      },
+      "notCompleted": [
+        "real EEG dataset validation",
+        "real neural avalanche dataset validation",
+        "formal measurement-model validation",
+        "external observer-branching empirical test"
+      ],
+      "claimBoundary": "Observer/branching model screen passes internally. Neural and EEG outputs are target signatures only until tested on real datasets."
+    },
+    "QG": {
+      "module": "QG",
+      "description": "Finite Spin-Foam Transition-Amplitude Audit",
+      "currentStatus": "finite_amplitude_audit_passed",
+      "runMode": "finite_audit_screen",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "scope": "Finite transition-amplitude audit only.",
+      "summary": {
+        "finiteAmplitudeN18": 1.04394,
+        "finiteAmplitudeN40": 1.04394,
+        "relativeTail": 4.81169e-12,
+        "relativeTailStatus": "PASS",
+        "unitarityProxyStatus": "PASS",
+        "refinementProxyStatus": "PASS",
+        "geometryCoherenceStatus": "PASS"
+      },
+      "results": {
+        "finiteAmplitudeN18": 1.04394,
+        "finiteAmplitudeN40": 1.04394,
+        "relativeTail": 4.81169e-12,
+        "relativeTailStatus": "PASS",
+        "unitarityProxy": 1,
+        "unitarityProxyStatus": "PASS",
+        "refinementProxy": 1,
+        "refinementProxyStatus": "PASS",
+        "geometryCoherence": 0.940535,
+        "geometryCoherenceStatus": "PASS"
+      },
+      "notCompleted": [
+        "full spin-foam quantum-gravity proof",
+        "continuum theorem",
+        "complete transition-amplitude formalism",
+        "renormalization/refinement proof"
+      ],
+      "claimBoundary": "Finite spin-foam transition-amplitude audit only. Not a full quantum-gravity proof, continuum theorem, or complete spin-foam formalism."
+    },
+    "W2R": {
+      "module": "W2R",
+      "displayName": "W2-R",
+      "description": "Revised triadic-weight BBN closeout",
+      "currentStatus": "internal_BBN_proxy_closeout_pass_external_public_code_pending",
+      "canonicalRole": "Active revised BBN/Li7 theorem lane replacing the old collapsed scalar W lane",
+      "runMode": "revised_triadic_weight_BBN_proxy_closeout",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "paperReproductionPath": true,
+      "usesTriadicWeights": true,
+      "triadScalarUsed": false,
+      "empiricalTargetsUsedForOptimization": false,
+      "parameterSearchPerformed": false,
+      "mcmcUsed": false,
+      "nutsUsed": false,
+      "externalPublicCodeStatus": "PENDING",
+      "summary": {
+        "OldScalarLi7OverObserved": 3.12534,
+        "TriadicLi7OverObserved": 0.999643,
+        "Li7SuppressionFactorVsOldScalar": 3.12645,
+        "RealWorldPassedSpeciesCount": 4,
+        "RealWorldTotalSpeciesCount": 4,
+        "InternalBBNProxyStatus": "PASS",
+        "ExternalPublicCodeStatus": "PENDING"
+      },
+      "results": {
+        "oldScalarLi7OverObserved": 3.12534,
+        "triadicLi7OverObserved": 0.999643,
+        "li7SuppressionFactorVsOldScalar": 3.12645,
+        "strictNoBridgeLi7OverObserved": 1.0034,
+        "interpretiveDarkBridgeLi7OverObserved": 0.999643,
+        "maxLightElementAbsDriftPercent": 0.801015,
+        "meanLightElementAbsDriftPercent": 0.53261,
+        "DPercentDrift": 0.801015,
+        "He3PercentDrift": 0.640262,
+        "He4Drift": 0.000390252,
+        "Be7SuppressionFactor": 2.89767,
+        "Li7SelectivityIndex": 3.90312,
+        "Be7Li7BranchSelectivityIndex": 3.76031,
+        "FullTriadLi7OverObserved": 0.999643,
+        "QVOnlyLi7OverObserved": 0.983826,
+        "CIFOnlyLi7OverObserved": 3.64564,
+        "RFLOnlyLi7OverObserved": 2.48007,
+        "NoQVRenormalizedLi7OverObserved": 2.82283,
+        "realWorldPassedSpeciesCount": 4,
+        "realWorldTotalSpeciesCount": 4
+      },
+      "realWorldBandScreen": {
+        "D_over_H": {
+          "prediction": 2.5704258749380422e-05,
+          "status": "PASS",
+          "bandZProxy": 0.7237645823006956
+        },
+        "He3_over_H": {
+          "prediction": 1.0365947001247136e-05,
+          "status": "PASS",
+          "bandZProxy": 0.13307163681714013
+        },
+        "YpHe4": {
+          "prediction": 0.24966825210155394,
+          "status": "PASS",
+          "bandZProxy": 0.7780420169256566
+        },
+        "Li7_over_H": {
+          "prediction": 1.5994288583010356e-10,
+          "status": "PASS",
+          "bandZProxy": -0.0011422833979292065
+        }
+      },
+      "mechanismInterpretation": "QV-dominant branch-selective suppression of the Be7/Li7 pathway while maintaining D/H, He3/H, and He4 stability in the internal screen.",
+      "claimBoundary": "W2-R closes the internal BBN theorem/proxy lane. It does not claim completed external BBN validation until implemented in public BBN reaction-network code such as PRIMAT, AlterBBN, or PArthENoPE."
+    },
+    "W3": {
+      "module": "W3",
+      "description": "Grouped post-BBN triadic nucleosynthesis cascade",
+      "currentStatus": "internal_grouped_post_BBN_cascade_pass_external_networks_pending",
+      "canonicalRole": "Carries the W2-R BBN seed through grouped post-BBN nucleosynthesis layers",
+      "runMode": "grouped_triadic_nucleosynthesis_cascade",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "paperReproductionPath": true,
+      "inheritsFrom": "W2R",
+      "firstActionRepresented": "QV(CIF) -> RFL",
+      "layerCascade": [
+        "BBN seed",
+        "Stellar fusion",
+        "Alpha ladder",
+        "Iron peak",
+        "s-process",
+        "r-process",
+        "Rare isotope tail",
+        "Solar grouped abundance comparison"
+      ],
+      "summary": {
+        "V1GroupedCascadeStatus": "PASS",
+        "V2ExplicitFirstActionStatus": "PASS",
+        "V2RobustnessAuditStatus": "PASS",
+        "MinimumSolarGroupedLogShapeCorrelation": 0.9756692875681399,
+        "MaximumMassConservationError": 2.220446049250313e-16,
+        "InternalModuleW3Status": "PASS",
+        "ExternalNetworkValidationStatus": "PENDING"
+      },
+      "results": {
+        "minimumSolarGroupedLogShapeCorrelation": 0.9756692875681399,
+        "maximumMassConservationError": 2.220446049250313e-16,
+        "minimumMetallicityProxyZ": 0.0077308471637736464,
+        "maximumMetallicityProxyZ": 0.01584122119231679,
+        "minimumHeavyTailMass": 2.806412973779489e-05,
+        "depth6StrictShapeCorrelation": 0.9756753838221937,
+        "depth9StrictShapeCorrelation": 0.9808989164648904,
+        "depth12StrictShapeCorrelation": 0.9824209552972543,
+        "depth6BridgeShapeCorrelation": 0.9756692875681399,
+        "depth9BridgeShapeCorrelation": 0.980896870027239,
+        "depth12BridgeShapeCorrelation": 0.9824216194380877,
+        "V2Depth9H": 0.7206078447676928,
+        "V2Depth9He": 0.2676621902199409,
+        "V2Depth9CNO": 0.006929346275938092,
+        "V2Depth9Alpha": 0.003673655715817423,
+        "V2Depth9IronPeak": 0.0010523910163196778,
+        "V2Depth9sProcess": 3.8044895302595004e-05,
+        "V2Depth9rProcess": 3.645789754472243e-05,
+        "V2Depth9RareTail": 6.905150100615805e-08,
+        "V2Depth9HHeDominance": 0.9882700349876337,
+        "V2Depth9MetallicityProxyZ": 0.011729965012366284,
+        "V2Depth9CNOPlusAlphaMass": 0.010603001991755515,
+        "V2Depth9IronPeakMass": 0.0010523910163196778,
+        "V2Depth9HeavyTailMass": 7.457184434832359e-05,
+        "V2Depth9SolarGroupedLogShapeCorrelation": 0.980896870027239
+      },
+      "claimBoundary": "W3 closes the internal grouped post-BBN theorem/proxy cascade. It does not claim completed external validation until tested in stellar-yield, supernova, neutron-star-merger, and galactic chemical-evolution network models."
+    },
+    "W4": {
+      "module": "W4",
+      "description": "Element-resolved solar-abundance comparison screen",
+      "currentStatus": "internal_element_resolved_solar_abundance_screen_pass_external_networks_pending",
+      "canonicalRole": "Resolves the grouped W3 cascade into an element-level abundance comparison screen",
+      "runMode": "element_resolved_triadic_nucleosynthesis_screen",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "paperReproductionPath": true,
+      "inheritsFrom": "W3",
+      "firstActionRepresented": "QV(CIF) -> RFL",
+      "observedSolarDataUsedForComparison": true,
+      "observedSolarDataUsedForOptimization": false,
+      "empiricalTargetsUsedForOptimization": false,
+      "elementSet": [
+        "H",
+        "He",
+        "Li",
+        "Be",
+        "B",
+        "C",
+        "N",
+        "O",
+        "Ne",
+        "Mg",
+        "Si",
+        "S",
+        "Ar",
+        "Ca",
+        "Ti",
+        "Cr",
+        "Mn",
+        "Fe",
+        "Co",
+        "Ni",
+        "Sr",
+        "Y",
+        "Zr",
+        "Ba",
+        "La",
+        "Ce",
+        "Pb",
+        "Eu",
+        "Pt",
+        "Au",
+        "Th",
+        "U"
+      ],
+      "summary": {
+        "V2BridgeShapeCorrelation": 0.9946143082605848,
+        "V2BridgeMeanAbsResidualDex": 0.32173032729858664,
+        "V2BridgeMedianAbsResidualDex": 0.22670722440847357,
+        "V2BridgeMaxAbsResidualDex": 1.2954542933561295,
+        "ModuleW4Status": "PASS",
+        "ExternalNetworkValidationStatus": "PENDING"
+      },
+      "results": {
+        "ModuleX1V1ElementResolvedStatus": "CHECK_NEEDS_ELEMENT_FAMILY_REFINEMENT",
+        "ModuleX1V2FamilyRefinementStatus": "PASS",
+        "ModuleX1V2RobustnessAblationStatus": "PASS",
+        "V2BridgeShapeCorrelation": 0.9946143082605848,
+        "V2BridgeMeanAbsResidualDex": 0.32173032729858664,
+        "V2BridgeMedianAbsResidualDex": 0.22670722440847357,
+        "V2BridgeMaxAbsResidualDex": 1.2954542933561295,
+        "V2BridgeLiBeB_MAE": 0.17724382598597152,
+        "V2BridgeCNO_MAE": 0.09594900008972,
+        "V2BridgeAlpha_MAE": 0.24860753657152745,
+        "V2BridgeIronPeak_MAE": 0.4852075382626763,
+        "V2BridgeSProcess_MAE": 0.4604038902912326,
+        "V2BridgeRProcess_MAE": 0.409769252420474,
+        "V2StrictShapeCorrelation": 0.9946214624222676,
+        "V2StrictMeanAbsResidualDex": 0.3230085117273216,
+        "V2StrictMedianAbsResidualDex": 0.2308787111398869,
+        "V2StrictMaxAbsResidualDex": 1.3012943747801073,
+        "NoSpallationLiBeB_MAE_Strict": 1.257857638845522,
+        "NoSpallationLiBeB_MAE_Bridge": 1.257857638845522,
+        "NoHighZRaritySProcess_MAE_Strict": 2.722884427736697,
+        "NoHighZRarityRProcess_MAE_Strict": 3.9350204901523,
+        "NoHighZRaritySProcess_MAE_Bridge": 2.722884427736697,
+        "NoHighZRarityRProcess_MAE_Bridge": 3.9350204901523,
+        "UnresolvedHeavyReservoirMass_Strict": 7.428033621472045e-05,
+        "UnresolvedHeavyReservoirMass_Bridge": 7.428307412810721e-05
+      },
+      "mechanismAudit": {
+        "FullV2PassesStrictNoBridge": true,
+        "FullV2PassesInterpretiveDarkBridge": true,
+        "FullV2PassesBothTriadModes": true,
+        "SpallationAblationDegradesLiBeB": true,
+        "HighZRarityAblationDegradesHeavyTail": true,
+        "AblationMechanismPass": true
+      },
+      "claimBoundary": "W4 closes the internal element-resolved theorem/proxy comparison screen. It does not claim completed external validation until tested in stellar-yield, supernova, neutron-star-merger, and galactic chemical-evolution network models."
+    },
+    "CRTrace": {
+      "module": "CRTrace",
+      "displayName": "CR-Trace",
+      "description": "Global collapse-rebirth inheritance trace audit",
+      "currentStatus": "internal_trace_audit_pass_external_validation_pending",
+      "canonicalRole": "Treats the downstream module sequence as a collapse-rebirth inheritance trace",
+      "runMode": "global_collapse_rebirth_trace_audit",
+      "consumesFrozenPacket": true,
+      "mayRetuneFrozenPacket": false,
+      "paperReproductionPath": true,
+      "firstActionRepresented": "QV(CIF) -> RFL",
+      "moduleFlow": [
+        "G -> R",
+        "R -> N",
+        "N -> DownstreamPhysicalProjection",
+        "DownstreamPhysicalProjection -> W2R",
+        "W2R -> W3",
+        "W3 -> W4",
+        "W4 -> CRTrace"
+      ],
+      "summary": {
+        "InternalCollapseRebirthTraceStatus": "PASS",
+        "RealWorldTraceScreenStatus": "PASS",
+        "ExternalFullValidationStatus": "PENDING",
+        "TheoremAddendumStatus": "READY_WITH_EXTERNAL_VALIDATION_BOUNDARY",
+        "GlobalCollapseRebirthTraceScore": 0.9215536385594688
+      },
+      "traceScores": {
+        "FrozenPacketNoRetuneScore": 1.0,
+        "ClosureMemoryScore": 0.73095325,
+        "ProjectionIdentityScore": 0.9999999997692552,
+        "DarkKernelTraceScore": 0.9218513333333332,
+        "CPObserverGeometryScore": 0.9505556893796789,
+        "BBNRealWorldScore": 0.9332294999999999,
+        "GroupedNucleosynthesisScore": 0.9913132315190758,
+        "ElementResolvedSolarAbundanceScore": 0.844526104474407,
+        "GlobalCollapseRebirthTraceScore": 0.9215536385594688
+      },
+      "checkLedger": {
+        "ModuleGPacketFrozen": true,
+        "NoEmpiricalTargetsUsedInFrozenPacket": true,
+        "NoParameterSearchPerformed": true,
+        "NoMCMCUsed": true,
+        "NoNUTSUsed": true,
+        "ModuleRClosureMemoryPass": true,
+        "ModuleNProjectionPass": true,
+        "PhysicalProjectionScreenPass": true,
+        "DarkMatterCompressionDecays": true,
+        "DarkEnergyTailPersists": true,
+        "GeometryCoherencePass": true,
+        "CPObserverSuppressionPass": true,
+        "ModuleW2RBBNPass": true,
+        "ModuleW3GroupedCascadePass": true,
+        "ModuleW4ElementResolvedPass": true,
+        "FirstActionPreserved": true,
+        "CollapseRebirthFlowRepresented": true,
+        "ModuleFlowIsDownstreamInheritanceChain": true,
+        "ExternalBBNPublicCodeCompleted": false,
+        "ExternalStellarYieldNetworkCompleted": false,
+        "ExternalSupernovaNetworkCompleted": false,
+        "ExternalNeutronStarMergerNetworkCompleted": false,
+        "ExternalGalacticChemicalEvolutionNetworkCompleted": false,
+        "DirectObservationOfPriorCosmicCycleClaimed": false
+      },
+      "claimBoundary": "CR-Trace supports an internal collapse-rebirth inheritance trace interpretation with real-world comparison screens. It does not prove direct observation of a prior cosmic cycle and does not complete external validation."
+    }
+  },
+  "verificationChecks": {
+    "containsOnlyDownstreamValidationScreens": true,
+    "containsModuleU": true,
+    "containsModuleV": true,
+    "containsModuleW": true,
+    "containsModuleX": true,
+    "containsModuleY2": true,
+    "containsModuleZ": true,
+    "containsModuleQG": true,
+    "moduleWNameAvoidsFullReactionNetworkOverclaim": true,
+    "moduleY2MarkedExploratory": true,
+    "allScreensConsumeFrozenPacket": true,
+    "allScreensMayRetuneFrozenPacket": false,
+    "containsModuleW2R": true,
+    "containsModuleW3": true,
+    "containsModuleW4": true,
+    "containsCRTrace": true,
+    "moduleWRelabeledHistorical": true,
+    "moduleW2RMarkedExternalPublicCodePending": true,
+    "moduleW3MarkedExternalNetworksPending": true,
+    "moduleW4MarkedExternalNetworksPending": true,
+    "CRTraceDoesNotClaimPriorCycleObservation": true
+  },
+  "futureWork": [
+    "Run W2-R in public BBN reaction-network code and propagate uncertainties.",
+    "Run W3/W4 against stellar-yield, supernova, neutron-star-merger, and galactic chemical-evolution network models.",
+    "Freeze Module Y2 formulas into Module Y3 and retest without reference-based map selection.",
+    "Run full BAO/SNe/CMB spectra validation.",
+    "Develop full EFT-level CP/EDM and baryogenesis calculation.",
+    "Compare Module Z neural predictions against real EEG/neural avalanche datasets.",
+    "Develop full spin-foam transition-amplitude derivation and continuum/refinement proof.",
+    "Obtain independent reproduction and peer-review-level audit."
+  ]
+}
