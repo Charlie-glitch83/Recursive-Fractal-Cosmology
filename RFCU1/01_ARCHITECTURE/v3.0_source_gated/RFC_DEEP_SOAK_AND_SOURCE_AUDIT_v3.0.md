@@ -78,6 +78,19 @@ All hashes below were recomputed from the Project Source bytes. The four present
 | RFC close-out ledgers | `e372302fdc09e204345e615c059b41bd4f9a8e9d4d8b1d38bd8d2ee28afe0cad` | D/P | Historical ordering, packet manifests, and audit vocabulary | “PASS” labels promoted beyond their stated internal/proxy scope; old packet ancestry |
 | How to build Presentation 28 | `2166865f16a2daefa1f40ddd80a180c05ba154c8dfb467c1381b8006d01589be` | D/P | Strong synthesis that the triad precedes the kernel; `QV(CIF)→RFL`; comparison of P24–P27; module-reference discipline | Conflation of the First Action with the Big Implosion; prior G/R/N packet architecture as a required parent |
 
+### Direct-reading synthesis
+
+The four presentations show a recognizable progression:
+
+- **P24** supplies the broad cosmological lifecycle and makes QV compression central.
+- **P25** connects triad, kernel, manifestation domains, identity, and recurrence, but often chooses forms to match desired domains.
+- **P26** tries to formalize the system and preserve memory through recompression, while importing too many external mathematical shells.
+- **P27** corrects much of the methodology by moving to deterministic, no-retune construction and separating calibration from dimensionless comparison.
+
+The later source hierarchy must correct one important P27/P28 ambiguity: the First Action is not the Big Implosion. `QV(CIF)→RFL` precedes physical history; the Big Implosion is the first **physical event** generated after the completed kernel and minimal physical interface exist.
+
+The transfer documents and math buckets are valuable as an intellectual laboratory. They are not an admissible law library. Their role is to reveal candidate questions, abandoned routes, and repeated intuitions that must be derived afresh.
+
 ## 4. Canonical files visible but not directly readable
 
 The RFC repository records these exact source hashes:
@@ -93,9 +106,98 @@ The RFC repository records these exact source hashes:
 | RFC Canonical Master Architecture v1.0 | `884ad77e542a99280165cdd309273a823bd9fa34976ef23256f3054e953364be` | F/U |
 | RFC Canonical Architecture v1.1 Bundle | `bd739d691b859c4734531072889fd847dce0d9f860bd55cec1046aae4572fd23` | F/U |
 
+The two N-body files were visible in the Library by identifier, but their bytes were not materialized into the workspace. The other canonical files were visible through repository manifests and derivative audit artifacts. Repository search confirms that the source files themselves were not committed; only their hashes and derived records were.
+
+This creates a narrow but important promotion gate:
+
+- exact manuscript wording and formulas cannot be certified from hashes;
+- Appendix J cannot be assumed to be fully represented by derivative repository records;
+- the historical Module A–Q ownership map cannot be claimed as directly reproduced;
+- every recovered formula below remains forensic until checked against the matching source bytes.
+
 ## 5. Forensically recovered canonical content
 
-The RFC repository at commit `3d91a99c70728d2eaf11f26e94564511f9f59742` contains derivative evidence for the locked ontology, terminal N-body completion, lawful manifestation, and the Presentation 29 factor boundary. Such recovered evidence remains forensic until checked against direct source bytes.
+The RFC repository at commit `3d91a99c70728d2eaf11f26e94564511f9f59742` contains strong derivative evidence for the following content.
+
+### 5.1 Locked ontology and order
+
+- Ordered primitive triad: `(CIF, QV, RFL)`.
+- First Action: `QV(CIF) → RFL`.
+- The Big Implosion is the first physical event, not the First Action.
+- Physical time, recursion depth, source label, route, event order, body count, and refinement index are different types and cannot be silently identified.
+- RFL manifestation, persistent memory, and the next effective CIF are related but not identical objects.
+
+### 5.2 Kernel and terminal N-body completion
+
+The repository reconstructs the base kernel as
+
+\[
+K_f(t)=\sum_{j\in J_K}\delta^{-d(j)}e^{-\alpha d(j)t}f_j(t),
+\]
+
+with a typed depth map \(d:J_K\to\mathbb N_0\). Positive-depth and depth-zero sectors are separately typed.
+
+It records a finite N-body carrier
+
+\[
+\mathbf C_N=(X_N,L_N,P_N,R_N,W_N,E_N,B_N,M_N,\Pi_N,\Sigma_N,G_N),
+\]
+
+with directed lane set
+
+\[
+L_N=\{L(i\mid j):i\ne j\},\qquad |L_N|=N(N-1).
+\]
+
+Each directed lane inherits the triad, memory, and base kernel. The completed kernel is typed composition,
+
+\[
+\widehat{\mathcal K}_N
+=\operatorname{Complete}_{NB}(K_f,\mathbf C_N,\mathsf{Act},\mathsf{Spec}),
+\]
+
+not `K_f` plus a second, downstream N-body sum.
+
+The recorded exact growth identity is
+
+\[
+|L_{N+1}|-|L_N|=N(N+1)-N(N-1)=2N.
+\]
+
+Repository certificates also preserve witness-gated activation, dormancy/no-backreaction, route locality, no-loss promotion and reopening, and strict solution growth under an admitted nonredundant extension.
+
+### 5.3 Lawful manifestation
+
+The Module A record constructs a finite witnessed family with:
+
+- pairwise distinct bodies;
+- directed relations;
+- conservative exchange checks;
+- exact `2N` lane growth;
+- an injection from the \(N\)-body realization into the \((N+1)\)-body realization;
+- arbitrary-finite unboundedness without assuming an actually infinite body count.
+
+These are useful subordinate theorems. They do not by themselves prove a physical universe or a dimensional bridge.
+
+### 5.4 Presentation 29 factor boundary
+
+The repository attributes to Presentation 29 a conditional N-V2 coherence map and historical values
+
+\[
+\texttt{energyFactor}=0.28443,\qquad
+\texttt{timeFactor}=1.54099.
+\]
+
+The later provenance audit found that the A7 formulas used to “recover” those values did not exist in the admitted pre-A7 source corpus. They were constructed after the values were known and are quarantined.
+
+The exact audit result was:
+
+- all recorded N-V2 residual identities vanish for every positive factor pair;
+- the factor Jacobian is the zero matrix;
+- the Jacobian rank is zero;
+- the solution family has dimension two.
+
+Therefore the N-V2 identities are a conditional coherence check, not a derivation of either factor. The new proof must either derive independent source-owned constraints before target exposure or retain the factors as unresolved symbols. It must never recover them from their historical numerical values.
 
 ## 6. Quarantine registry
 
