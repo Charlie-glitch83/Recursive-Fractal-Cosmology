@@ -1,8 +1,8 @@
-# Rebuild Module A and Module B Exact Migration Batch — 2026-07-26
+# Rebuild Module A and Module B Migration Batch — 2026-07-26
 
-This batch preserves the exact bytes and original filenames of 30 Work-iteration files supplied across the RUN 008–010 and Module A uploads.
+This batch records the Work-iteration Module A and Module B materials supplied by the user and the integrity checks completed against them.
 
-## Authoritative archives
+## Authoritative archives verified from supplied bytes
 
 - `RFC_Rebuild_Module_A_v1.0_Canonical_Completion_Bundle.zip`
   - SHA-256: `c9398886747b106d0545e0d5ea63088fd3821e08d6f035e850402d3892772d75`
@@ -11,35 +11,23 @@ This batch preserves the exact bytes and original filenames of 30 Work-iteration
 
 - `RFC_Rebuild_Module_B_RUNS_008_010_Canonical_Checkpoint_Bundle.zip`
   - SHA-256: `ce2d9f13bd6561935ce3e61ddb7a113a918ceb451c744e9df518be4ccc8acbc1`
-  - contains RUNs 008–010 and the checkpoint deliverables;
+  - contains RUNs 008–010 and checkpoint deliverables;
   - declared internal SHA-256 ledger verified: `26/26`.
 
-## Loose files
+## Loose-file equivalence
 
-The 27 loose RUN 008–010 files match their corresponding checkpoint archive members exactly. The loose `MODULE_A_TEC_A.json` matches the Module A archive member exactly.
+- the 27 supplied loose RUN 008–010 files match their corresponding checkpoint archive members exactly;
+- the supplied loose `MODULE_A_TEC_A.json` matches the Module A archive member exactly;
+- the separately supplied RUN 007 closeout, H_A export, and integrated theorem match the Module A chain and are stored as readable repository files.
 
-## Verification
+## Repository-resident state
 
-- `MEMBER_SHA256SUMS.txt` verifies all 30 original supplied files.
-- The reconstructed transfer archive contains complete extracted-member ledgers for both authoritative ZIPs.
-- The transfer archive also contains the full integrity audit recording freeze-manifest and loose/archive equivalence checks.
+Readable RUN 007 canonical artifacts and this integrity manifest are present on the recovery branch.
 
-## Reconstruction
-
-```sh
-cat rebuild_moduleA_moduleB_20260726.tar.xz.b64.part* \
-  | base64 -d \
-  > rebuild_moduleA_moduleB_20260726.tar.xz
-
-sha256sum -c ARCHIVE_SHA256SUM.txt
-
-tar -xJf rebuild_moduleA_moduleB_20260726.tar.xz
-```
-
-`CHUNK_SHA256SUMS.txt` verifies every encoded transfer part before reconstruction.
+The two binary ZIP archives are verified from the supplied bytes, but are not yet stored as repository blobs by the connected GitHub file API. They remain required for literal one-to-one binary closure unless reconstructed from separately committed members.
 
 ## Replay boundary
 
-Exact-byte and internal-ledger integrity are verified. Full validator replay is not claimed from this batch alone because RUN 001 and RUN 008 validators require canonical source-root files that are referenced by hash but are not all included here.
+Exact source-bundle integrity is verified. Full validator replay still requires all canonical source-root files at their intended repository paths.
 
-Additional Rebuild files may be added as later exact migration batches until the user confirms the folder upload is complete.
+Historical v1.0/v1.1 architecture duplicates are excluded from the active Work-iteration migration because the Work-iteration source register classifies them as archival/reserve material rather than active output.
