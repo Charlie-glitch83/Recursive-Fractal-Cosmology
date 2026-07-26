@@ -7,6 +7,13 @@ on:
     paths:
       - .github/workflows/rfcu1-unpack-migration.yml
       - RFCU1/98_TRANSFER_ARCHIVES/work_iteration/rfcu1_bundle_v3/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/rfcu1-unpack-migration.yml
+      - RFCU1/98_TRANSFER_ARCHIVES/work_iteration/rfcu1_bundle_v3/**
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -26,7 +33,7 @@ jobs:
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
-          import itertools, lzma, tarfile, shutil, hashlib, os
+          import itertools, lzma, tarfile, shutil, hashlib
 
           base = Path('RFCU1/98_TRANSFER_ARCHIVES/work_iteration/rfcu1_bundle_v3')
           names = ['part000', 'seg00', 'seg01', 'chunk01', 'chunk02', 'tail00', 'tail01']
