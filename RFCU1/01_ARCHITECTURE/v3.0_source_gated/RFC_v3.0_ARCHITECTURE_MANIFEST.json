@@ -1,0 +1,70 @@
+{
+  "title": "RFC New Integrated Proof — Master Architecture v3.0",
+  "status": "SOURCE_GATED_CANONICAL_CANDIDATE",
+  "scientific_runs_authorized": false,
+  "rfc_u2_is_parent": false,
+  "primitive_triad": [
+    "CIF",
+    "QV",
+    "RFL"
+  ],
+  "first_action": "QV(CIF) -> RFL",
+  "first_physical_event": "Big Implosion",
+  "terminal_physical_event": "Big Rip",
+  "score_policy": {
+    "quantitative_target": "1.0000",
+    "categorical_target": "CLEAN_PASS",
+    "hard_failure_floor": 0.95,
+    "componentwise_gate": true,
+    "aggregate_cannot_hide_component_failure": true,
+    "states": {
+      "EXACT_PASS": "Quantitative score is 1.0000 at declared precision; exact identities have zero residual.",
+      "CLEAN_PASS": "Every declared categorical, logical, or theorem obligation holds with no unresolved condition inside scope.",
+      "PASS_WITH_RESIDUAL": "Every component is at least 0.9500 but at least one quantitative component is below 1.0000; a residual record is required before closure or parentage.",
+      "HARD_FAIL_TRIAD_AUDIT": "At least one component is below 0.9500; stop the branch and audit triad representation, inheritance, activation, and utilization."
+    },
+    "failed_result_parentage": false,
+    "old_failures_have_generative_authority": false,
+    "replay_from_last_uncontaminated_checkpoint": true
+  },
+  "canonical_source_hashes": {
+    "Presentation 29 revised raw LaTeX.md": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+    "Presentation 29 revised Metadata.md": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+    "Presentation 30 raw LaTex.md": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+    "A Triadic Solution to the General N-Body Problem Revised.pdf": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+    "A Triadic Solution to the General N-Body Problem Metadata Revised.pdf": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+    "Module Plans.zip": "6fbf126f62e8c9a383446b0aae2691ac40a3a9ccc34c293de5ef9e462012cb76",
+    "RFC Canonical Master Architecture v1.0.md": "884ad77e542a99280165cdd309273a823bd9fa34976ef23256f3054e953364be",
+    "RFC Canonical Architecture v1.1 Bundle.zip": "bd739d691b859c4734531072889fd847dce0d9f860bd55cec1046aae4572fd23"
+  },
+  "modules": {
+    "A": {"name": "Source constitution", "depends_on": []},
+    "B": {"name": "Ordered triad and First Action", "depends_on": ["A"]},
+    "C": {"name": "Base-kernel constitution", "depends_on": ["A", "B"]},
+    "D": {"name": "Terminal N-body completion", "depends_on": ["A", "B", "C"]},
+    "E": {"name": "Lawful finite manifestation", "depends_on": ["D"]},
+    "F": {"name": "Endogenous order and clock", "depends_on": ["B", "C", "D", "E"]},
+    "G": {"name": "Minimal internal physical bridge", "depends_on": ["D", "E", "F"]},
+    "H": {"name": "Big Implosion", "depends_on": ["G"]},
+    "I": {"name": "Dark-sector bifurcation", "depends_on": ["H"]},
+    "J": {"name": "Early physical evolution", "depends_on": ["H", "I"]},
+    "K": {"name": "Dynamical geometry and structure", "depends_on": ["G", "J"]},
+    "L": {"name": "Observable physical channels", "depends_on": ["I", "J", "K"]},
+    "M": {"name": "Cross-domain and observer specializations", "depends_on": ["D", "K", "L"]},
+    "N": {"name": "Full-universe synthesis", "depends_on": ["I", "J", "K", "L"], "optional_augmented_parent": "M"},
+    "O": {"name": "Prediction and calibration freeze", "depends_on": ["N"]},
+    "P": {"name": "Blind empirical comparison", "depends_on": ["O"]},
+    "Q": {"name": "Big Rip and cycle closure", "depends_on": ["N", "P"]}
+  },
+  "quarantine_classes": {
+    "Q1": "fitted or tuned coefficients",
+    "Q2": "public targets used generatively",
+    "Q3": "imported standard equations",
+    "Q4": "old states and run packets",
+    "Q5": "unsupported consciousness, MWI, or totality claims",
+    "Q6": "primitive-role conflicts",
+    "Q7": "provenance or internal scores promoted to physics",
+    "Q8": "post-hoc formula recovery"
+  },
+  "next_authorized_action": "DIRECT_SOURCE_PROMOTION_ONLY"
+}

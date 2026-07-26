@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "batch_id": "rebuild_moduleA_moduleB_20260726",
+  "purpose": "Exact-byte preservation of user-supplied Work-iteration Module A and Module B files",
+  "original_file_count": 30,
+  "module_A_archive_sha256": "c9398886747b106d0545e0d5ea63088fd3821e08d6f035e850402d3892772d75",
+  "module_B_archive_sha256": "ce2d9f13bd6561935ce3e61ddb7a113a918ceb451c744e9df518be4ccc8acbc1",
+  "module_A_freeze_manifest_verified": "23/23",
+  "module_B_internal_ledger_verified": "26/26",
+  "module_B_loose_members_match_archive": "27/27",
+  "module_A_loose_TEC_matches_archive": true,
+  "historical_v1_0_v1_1_architecture_duplicates_excluded_from_active_migration": true,
+  "replay_boundary": "Exact-byte and hash integrity verified. Full validators still require all canonical source-root files at their intended paths."
+}

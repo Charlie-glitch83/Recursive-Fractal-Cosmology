@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0",
+  "export_id": "RFC-H_A-v1.0",
+  "date": "2026-07-25",
+  "status": "FROZEN",
+  "mode": "GENERATION_SEALED",
+  "claim_domain": "PREFYSICAL_TRIADIC_RELATIONAL_GOVERNANCE_OVER_WITNESSED_FINITE_RELATIONAL_SYSTEMS_AND_ADMISSIBLE_EVENT_ATLASES",
+  "parent_runs": {
+    "RUN_001": "1.0000/CLEAN_PASS",
+    "RUN_002": "1.0000/CLEAN_PASS",
+    "RUN_003": "1.0000/CLEAN_PASS",
+    "RUN_004": "1.0000/CLEAN_PASS",
+    "RUN_005": "1.0000/CLEAN_PASS",
+    "RUN_006": "1.0000/CLEAN_PASS"
+  },
+  "S_A": {
+    "primitive_triad": {
+      "CIF": "source-bearing possibility envelope",
+      "QV": "lawful witness-gated action, selection, compression, or actualization",
+      "RFL": "Recursive Fractal Lattice; stabilized inheritable manifestation"
+    },
+    "first_action": "QV(CIF) -> RFL",
+    "return_sequence": "RFL_manifest -> Mrec_latent -?> CIF_next_conditioned",
+    "type_registry": {
+      "j": "recursive depth",
+      "J": "finite recursive-depth cutoff",
+      "s": "recurrence or universe-cycle index",
+      "t": "declared normalized domain argument",
+      "t_phys": "derived dimensional physical time, unavailable before Module B",
+      "N": "finite constituent count",
+      "route": "lawful route class",
+      "event_order": "logical or derived event order",
+      "scale": "promotion/refinement level"
+    },
+    "base_kernel": "K_f(t) = sum_{j=0}^infinity delta^(-j) exp(-alpha*j*t) f_j(t)",
+    "parameter_constraints": {
+      "delta": "symbolic real delta > 1",
+      "alpha": "symbolic real alpha > 0",
+      "historical_numerical_value_admitted": false
+    },
+    "kernel_certificate": {
+      "level_bound": "sup_{j,t in D} ||f_j(t)|| <= C_D < infinity",
+      "uniform_norm_bound": "C_D*delta/(delta-1)",
+      "uniform_tail_after_J": "C_D*delta^(-J)/(delta-1)",
+      "perturbation_bound": "epsilon*delta/(delta-1)",
+      "conditional_derivative_bound": "C1*delta/(delta-1) + alpha*C0*delta/(delta-1)^2"
+    },
+    "recursive_entropy": {
+      "distribution": "p_j=(1-q)q^j, q=exp(-alpha*t)/delta",
+      "mean_depth": "q/(1-q)",
+      "entropy": "-log(1-q)-q*log(q)/(1-q)",
+      "meaning": "recursive-depth occupancy and inherited-influence dispersion",
+      "thermodynamic_identity_claimed": false
+    },
+    "operational_representation": {
+      "modal_content_role": "CIF",
+      "depth_weight_and_damping_role": "QV",
+      "stabilized_sum_role": "RFL",
+      "fixed_historical_triad_weights_admitted": false,
+      "singleton_route_weight": 1,
+      "multiroute_policy": "preserve the branch family unless a source-first summability/normalization theorem is supplied"
+    }
+  },
+  "Sigma_A": {
+    "status": "SCHEMA_ONLY_NO_EMPIRICAL_COVARIANCE_IMPORTED",
+    "required_fields": [
+      "object identity",
+      "dimensional type",
+      "uncertainty type",
+      "covariance or interval representation",
+      "derivation source",
+      "transformation law",
+      "validity range",
+      "freeze status"
+    ],
+    "linear_pushforward": "Sigma_out = J Sigma_in J^T when a justified differentiable map exists",
+    "uncertainty_is_tuning_permission": false
+  },
+  "R_A": {
+    "generic_constituent_schema": [
+      "constituent_id",
+      "constituent_type",
+      "state",
+      "dimensional_type",
+      "relation_ports",
+      "triadic_packet",
+      "witness",
+      "event_status",
+      "memory",
+      "scale",
+      "uncertainty",
+      "provenance"
+    ],
+    "directed_relations": "L_N={L(i|k): i,k in {1,...,N}, i!=k}",
+    "lane_cardinality": "N(N-1)",
+    "add_one_body_lane_growth": "2N",
+    "terminal_route_kernel": "K_[r],N(t)=sum_{j=0}^infinity delta^(-j) exp(-alpha*j*t) Phi_{j,[r],N}(t)",
+    "terminal_completion": "Khat_N=Complete_NB(K_f,C_N,Witness,Event,Memory,NoLoss,Specialize)",
+    "modal_certificate": "Phi_{j,[r],N}=E_j Xi_[r],N in l1(N_0;X_N)",
+    "local_route_existence": "unique for every finite noncollision source state",
+    "continuation": "unique maximal noncollision route plus witnessed event charts",
+    "refinement": "injective source-plus-specialization to (N+1)-solution-germ map",
+    "unchanged_positive_mass_old_trajectory_claimed": false,
+    "strict_physical_solution_growth_claimed": false
+  },
+  "E_A": {
+    "event_packet": "P_E=(CIF_E,QV_E,RFL_E,Mrec_E,Kf_E,Witness_E,Branch_E,Provenance_E)",
+    "operator_type": "partial set-valued multifunction",
+    "outcomes": {
+      "no_lawful_branch": "OBSTRUCTION",
+      "one_lawful_signature": "UNIQUE_CONTINUATION",
+      "many_representatives_one_signature": "GAUGE_FAMILY",
+      "many_independent_signatures": "MULTIROUTE_FAMILY"
+    },
+    "empty_branch_success_allowed": false,
+    "arbitrary_label_selection_allowed": false,
+    "public_target_branch_selection_allowed": false,
+    "physical_big_implosion_executed": false
+  },
+  "M_A": {
+    "protected_signature_fields": 18,
+    "no_loss_equivalence": "r ~_NL r' iff protected_signature(r)=protected_signature(r')",
+    "induced_signature_injective": true,
+    "memory_encoding": "append-only typed protected-signature/event/scale ledger",
+    "round_trip": "Decode_M(Encode_M(signature))=signature",
+    "RFL_equals_memory": false,
+    "memory_equals_next_CIF": false,
+    "RFL_equals_next_CIF": false,
+    "memory_is_fourth_primitive": false
+  },
+  "Scale_A": {
+    "promotion": "Pi_up(x)=(Aggregate(x),Encode_M(protected_signature(x)),validity,interaction_law)",
+    "reopening": "Pi_down(Pi_up(x))=x on protected state",
+    "algebraic_type": "split monomorphism",
+    "dormant_contribution": 0,
+    "dormant_backreaction": 0,
+    "dormant_ancestry_deleted": false,
+    "activation_requires": [
+      "route-local witness",
+      "domain specialization certificate"
+    ]
+  },
+  "Pi_A": {
+    "source_register": "execution/RUN_001_MODULE_A_SOURCE_CONSTITUTION/RUN_001_SOURCE_ASSET_REGISTER.json",
+    "architecture": "deliverables/RFC_NEW_INTEGRATED_PROOF_MASTER_ARCHITECTURE_v3.1_SOURCE_RECONCILED.md",
+    "canonical_lock": "deliverables/RFC_CANONICAL_PROOF_LOCK_v3.1_SOURCE_RECONCILED.md",
+    "freeze_manifest": "execution/RUN_007_MODULE_A_EXPORT_AND_TEC/MODULE_A_FREEZE_MANIFEST.json",
+    "generation_branch": "SEALED_FROM_PUBLIC_TARGETS",
+    "public_comparison_branch": "UNOPENED",
+    "allowed_downstream_uses": [
+      "derive source-owned domain equations",
+      "instantiate a witnessed modal basis",
+      "activate applicable carrier fields with specialization certificates",
+      "propagate uncertainty and provenance",
+      "produce preregistered predictions before public comparison"
+    ],
+    "forbidden_downstream_uses": [
+      "modify H_A",
+      "fit or retune a source field",
+      "create a duplicate N-body engine",
+      "treat recursion depth as physical time",
+      "import historical numerical packet values",
+      "choose a branch from a public target",
+      "erase a protected signature field",
+      "execute a physical event without a domain law and witness"
+    ]
+  },
+  "F_A": {
+    "mandatory_falsifiers": [
+      "a complete admitted First Action without all three primitive roles",
+      "kernel divergence inside its certified domain",
+      "a target-derived modal function or parameter",
+      "an admitted route lacking a complete witness",
+      "loss of an independent protected distinction under quotient",
+      "memory or promotion that cannot reopen a required protected state",
+      "nonzero dormant contribution or backreaction",
+      "an unwitnessed or label-selected event branch",
+      "a downstream modification of H_A",
+      "a component score below 0.9500"
+    ],
+    "hard_floor": 0.95,
+    "target": "1.0000_OR_CLEAN_PASS",
+    "averaging_away_failure_allowed": false
+  },
+  "module_grammar": {
+    "source": "CIF_i=Src_i(H_A,H_{i-1},M_i)",
+    "action": "QV_i=Act_i(CIF_i,H_A,H_{i-1})",
+    "stabilization": "RFL_i=Stab_i(QV_i(CIF_i),H_A,H_{i-1})",
+    "export": "H_i=Export_i(CIF_i,QV_i,RFL_i,H_A,H_{i-1})",
+    "renaming_only_is_lawful": false,
+    "full_H_A_inheritance_required": true
+  },
+  "module_B_input_contract": {
+    "authorized": true,
+    "inputs_available": [
+      "typed CIF/QV/RFL constitution",
+      "First Action",
+      "completed relational carrier",
+      "witness and event grammar",
+      "no-loss and memory law",
+      "promotion/reopening law",
+      "uncertainty and provenance schema",
+      "hard falsifiers"
+    ],
+    "module_B_must_derive": [
+      "Big Implosion governing law",
+      "sole first physical cosmological state",
+      "physical-time origin",
+      "first geometry-bearing and field-bearing state",
+      "conservation and constraint closure",
+      "ordinary/radiative/compression-relic/dissipative-tail common ancestry and partition",
+      "primordial discriminating signatures"
+    ],
+    "background_physical_time_supplied_by_H_A": false,
+    "physical_big_implosion_already_executed": false
+  },
+  "C_A": {
+    "certificate": "execution/RUN_007_MODULE_A_EXPORT_AND_TEC/MODULE_A_TEC_A.json",
+    "status": "1.0000/CLEAN_PASS",
+    "module_B_authorization": "AUTHORIZED"
+  },
+  "source_hash_locks": {
+    "master_architecture": "df56b19620513681f43c34d0c71e1a07298b23ae8e1d9fec3d1eff1bd5543cec",
+    "canonical_lock": "c6bb36a07f516957ec6a277e4b13be5661f50b3ce967361451ab374d1158f82a",
+    "architecture_manifest": "e57ac034bfe101c6cc5b11cb6d3ed4ad63334c94571417f238349abb0a6168c7",
+    "module_A_plan": "35a214e1440cd33e59d9d87f8cc925e85152e25e54e1cdf4943ae19674b45ca7"
+  },
+  "parent_result_hash_locks": {
+    "RUN_001": "f33d0fc5a33c4f0e567a5631f17c1508733ce827aa69c68a9de48e018f67fffd",
+    "RUN_002": "2dce60b21c7ecfd7dfb03cb32a080c92f224118387770d6ebe48ad8aa884a21c",
+    "RUN_003": "90498c6e23f3e45fecdd8bffc482a2a1d21ca73fdfec0e6922725a903b7be489",
+    "RUN_004": "1a247fccaf71b20b3f742f406270019cf94de94cd54a274173a7d7052cf8209a",
+    "RUN_005": "c9ee1c3ed4c1237f75dcd68cf5d40f2978b04e189dd1c846ff366d60f91ed6c1",
+    "RUN_006": "e25b9004437c50e522de8880f6e90733c4eae3dcfce666c77392ecfb6b2c980e"
+  },
+  "public_data_used": false,
+  "historical_outcome_used": false,
+  "retune_used": false
+}

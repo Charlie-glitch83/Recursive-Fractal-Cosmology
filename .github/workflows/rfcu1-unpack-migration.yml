@@ -1,0 +1,123 @@
+name: RFCU1 unpack migration
+
+on:
+  push:
+    branches:
+      - agent/rfcu1-work-iteration-recovery
+    paths:
+      - .github/workflows/rfcu1-unpack-migration.yml
+      - RFCU1/98_TRANSFER_ARCHIVES/work_iteration/rfcu1_bundle_v3/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/rfcu1-unpack-migration.yml
+      - RFCU1/98_TRANSFER_ARCHIVES/work_iteration/rfcu1_bundle_v3/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/rfcu1-work-iteration-recovery
+          fetch-depth: 0
+
+      - name: Reconstruct and extract verified migration archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import itertools, lzma, tarfile, shutil, hashlib
+
+          base = Path('RFCU1/98_TRANSFER_ARCHIVES/work_iteration/rfcu1_bundle_v3')
+          names = ['part000', 'seg00', 'seg01', 'chunk01', 'chunk02', 'tail00', 'tail01']
+          parts = {n: (base / n).read_text(encoding='utf-8').strip() for n in names}
+
+          first = [n for n, text in parts.items() if text.startswith('/Td6WFo')]
+          if len(first) != 1:
+              raise SystemExit(f'Expected exactly one XZ-leading fragment, found {first}')
+          first = first[0]
+          rest = [n for n in names if n != first]
+
+          raw = None
+          order = None
+          for perm in itertools.permutations(rest):
+              candidate_order = (first,) + perm
+              joined = ''.join(parts[n] for n in candidate_order)
+              try:
+                  import base64
+                  compressed = base64.b64decode(joined, validate=True)
+                  raw = lzma.decompress(compressed)
+                  order = candidate_order
+                  break
+              except Exception:
+                  continue
+
+          if raw is None:
+              raise SystemExit('No fragment ordering produced a valid XZ archive')
+
+          Path('/tmp/rfcu1-migration.tar').write_bytes(raw)
+          print('Recovered order:', order)
+          print('Recovered tar sha256:', hashlib.sha256(raw).hexdigest())
+
+          out = Path('/tmp/rfcu1-unpacked')
+          if out.exists():
+              shutil.rmtree(out)
+          out.mkdir(parents=True)
+          with tarfile.open('/tmp/rfcu1-migration.tar', 'r:') as tf:
+              tf.extractall(out)
+
+          candidates = [out / 'RFCU1', out]
+          source = None
+          for c in candidates:
+              if (c / 'deliverables').is_dir() and (c / 'execution').is_dir():
+                  source = c
+                  break
+          if source is None:
+              for c in out.rglob('*'):
+                  if c.is_dir() and (c / 'deliverables').is_dir() and (c / 'execution').is_dir():
+                      source = c
+                      break
+          if source is None:
+              raise SystemExit('Extracted archive does not contain deliverables/ and execution/')
+
+          target = Path('RFCU1')
+          for dirname in ('deliverables', 'execution'):
+              src = source / dirname
+              dst = target / dirname
+              dst.mkdir(parents=True, exist_ok=True)
+              for p in src.rglob('*'):
+                  if not p.is_file():
+                      continue
+                  if '__pycache__' in p.parts or p.suffix == '.pyc':
+                      continue
+                  rel = p.relative_to(src)
+                  q = dst / rel
+                  q.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(p, q)
+
+          files = [p for d in ('deliverables','execution') for p in (target/d).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc']
+          print('Migrated readable files:', len(files))
+          if len(files) < 86:
+              raise SystemExit(f'Expected at least 86 readable migrated files, found {len(files)}')
+          PY
+
+      - name: Commit extracted canonical trees
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add RFCU1/deliverables RFCU1/execution
+          if git diff --cached --quiet; then
+            echo "No extracted-file changes required."
+            exit 0
+          fi
+          git commit -m "RFCU1: migrate complete Module A and RUN 008-010 trees"
+          git push origin HEAD:agent/rfcu1-work-iteration-recovery

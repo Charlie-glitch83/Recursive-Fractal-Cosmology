@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-07-26",
+  "hash_algorithm": "SHA-256",
+  "verification_scope": "files materialized in the recovery workspace",
+  "verified": [
+    {
+      "source": "Presentation 29 revised raw LaTeX.md",
+      "expected_sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "actual_sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e",
+      "status": "MATCH"
+    },
+    {
+      "source": "Presentation 29 revised Metadata.md",
+      "expected_sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+      "actual_sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215",
+      "status": "MATCH"
+    },
+    {
+      "source": "Presentation 30 raw LaTex.md",
+      "expected_sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "actual_sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6",
+      "status": "MATCH"
+    },
+    {
+      "source": "A Triadic Solution to the General N-Body Problem Revised.pdf",
+      "expected_sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+      "actual_sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28",
+      "status": "MATCH"
+    },
+    {
+      "source": "A Triadic Solution to the General N-Body Problem Metadata Revised.pdf",
+      "expected_sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+      "actual_sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94",
+      "status": "MATCH"
+    },
+    {
+      "source": "RFC_Rebuild_v3.0_Source_Gated_Architecture_Bundle(1).zip",
+      "expected_sha256": "ed41cf3a023394983f4202d220e3ecd22de6a24ff960834b75a1a586b52d48b0",
+      "actual_sha256": "ed41cf3a023394983f4202d220e3ecd22de6a24ff960834b75a1a586b52d48b0",
+      "status": "MATCH"
+    }
+  ],
+  "not_materialized_for_byte_verification": [
+    {
+      "source": "Module Plans.zip",
+      "expected_sha256": "6fbf126f62e8c9a383446b0aae2691ac40a3a9ccc34c293de5ef9e462012cb76",
+      "status": "PENDING_EXACT_BYTES"
+    },
+    {
+      "source": "RFC Canonical Master Architecture v1.0.md",
+      "expected_sha256": "884ad77e542a99280165cdd309273a823bd9fa34976ef23256f3054e953364be",
+      "status": "PENDING_EXACT_BYTES"
+    },
+    {
+      "source": "RFC Canonical Architecture v1.1 Bundle.zip",
+      "expected_sha256": "bd739d691b859c4734531072889fd847dce0d9f860bd55cec1046aae4572fd23",
+      "status": "PENDING_EXACT_BYTES"
+    }
+  ],
+  "canonical_effect": "Hash matches prove source identity only. They do not by themselves complete repository import, source citations, run replay, or canonical registration."
+}
