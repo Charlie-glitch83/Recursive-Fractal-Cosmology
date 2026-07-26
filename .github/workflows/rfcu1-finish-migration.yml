@@ -1,0 +1,96 @@
+name: RFCU1 finish migration
+
+on:
+  push:
+    branches:
+      - agent/rfcu1-work-iteration-recovery
+    paths:
+      - .github/workflows/rfcu1-finish-migration.yml
+      - RFCU1/98_TRANSFER_ARCHIVES/work_iteration/raw_rebuild_uploads_batch_20260726/**
+
+permissions:
+  contents: write
+
+jobs:
+  unpack-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout recovery branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/rfcu1-work-iteration-recovery
+          fetch-depth: 0
+
+      - name: Reconstruct verified source batch
+        shell: bash
+        run: |
+          set -euo pipefail
+          batch_dir='RFCU1/98_TRANSFER_ARCHIVES/work_iteration/raw_rebuild_uploads_batch_20260726'
+          work="$RUNNER_TEMP/rfcu1_migration"
+          mkdir -p "$work/raw" "$work/module_a" "$work/module_b"
+
+          cat "$batch_dir"/raw_rebuild_uploads_batch_20260726.tar.xz.b64.part* \
+            | tr -d '\r\n' \
+            | base64 --decode > "$work/raw_rebuild_uploads_batch_20260726.tar.xz"
+          tar -xJf "$work/raw_rebuild_uploads_batch_20260726.tar.xz" -C "$work/raw"
+
+          module_a_zip="$(find "$work/raw" -type f -name 'RFC_Rebuild_Module_A_v1.0_Canonical_Completion_Bundle.zip' -print -quit)"
+          module_b_zip="$(find "$work/raw" -type f -name 'RFC_Rebuild_Module_B_RUNS_008_010_Canonical_Checkpoint_Bundle.zip' -print -quit)"
+
+          test -n "$module_a_zip"
+          test -n "$module_b_zip"
+
+          echo 'c9398886747b106d0545e0d5ea63088fd3821e08d6f035e850402d3892772d75  '"$module_a_zip" | sha256sum -c -
+          echo 'ce2d9f13bd6561935ce3e61ddb7a113a918ceb451c744e9df518be4ccc8acbc1  '"$module_b_zip" | sha256sum -c -
+
+          unzip -q "$module_a_zip" -d "$work/module_a"
+          unzip -q "$module_b_zip" -d "$work/module_b"
+          find "$work/module_a" "$work/module_b" -type d -name '__pycache__' -prune -exec rm -rf {} +
+          find "$work/module_a" "$work/module_b" -type f -name '*.pyc' -delete
+
+          mkdir -p RFCU1/deliverables RFCU1/execution
+          cp -a "$work/module_a/deliverables/." RFCU1/deliverables/
+          cp -a "$work/module_a/execution/." RFCU1/execution/
+          cp -a "$work/module_b/execution/." RFCU1/execution/
+
+          archive_dir='RFCU1/98_TRANSFER_ARCHIVES/work_iteration/canonical_bundles'
+          mkdir -p "$archive_dir"
+          cp "$module_a_zip" "$archive_dir/RFC_Rebuild_Module_A_v1.0_Canonical_Completion_Bundle.zip"
+          cp "$module_b_zip" "$archive_dir/RFC_Rebuild_Module_B_RUNS_008_010_Canonical_Checkpoint_Bundle.zip"
+
+          {
+            echo '# RFCU1 Module A and Module B Migration Manifest'
+            echo
+            echo '- Module A ZIP SHA-256: `c9398886747b106d0545e0d5ea63088fd3821e08d6f035e850402d3892772d75`'
+            echo '- Module B RUNs 008-010 ZIP SHA-256: `ce2d9f13bd6561935ce3e61ddb7a113a918ceb451c744e9df518be4ccc8acbc1`'
+            echo '- Generated Python cache files excluded: `__pycache__/`, `*.pyc`'
+            echo
+            echo '## Migrated files'
+            echo
+            find RFCU1/deliverables RFCU1/execution -type f -print | sort | sed 's#^#- `#; s#$#`#'
+          } > RFCU1/00_CANONICAL_STATE/MODULE_A_B_MIGRATION_MANIFEST.md
+
+          find RFCU1/deliverables RFCU1/execution -type f -print0 \
+            | sort -z \
+            | xargs -0 sha256sum \
+            > RFCU1/00_CANONICAL_STATE/MODULE_A_B_MIGRATED_FILE_SHA256SUMS.txt
+
+          test "$(find RFCU1/execution/RUN_001_MODULE_A_SOURCE_CONSTITUTION -type f | wc -l)" -gt 0
+          test "$(find RFCU1/execution/RUN_007_MODULE_A_EXPORT_AND_TEC -type f | wc -l)" -gt 0
+          test "$(find RFCU1/execution/RUN_008_MODULE_B_BIG_IMPLOSION_SOURCE_LAW_AND_FIRST_PHYSICAL_STATE -type f | wc -l)" -gt 0
+          test "$(find RFCU1/execution/RUN_009_MODULE_B_RECURSIVE_ENTROPY_AND_PHYSICAL_TIME -type f | wc -l)" -gt 0
+          test "$(find RFCU1/execution/RUN_010_MODULE_B_GENESIS_GRAPH_CONSERVATION_AND_NO_LOSS_PROMOTION -type f | wc -l)" -gt 0
+
+      - name: Commit completed migration
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add RFCU1/deliverables RFCU1/execution RFCU1/00_CANONICAL_STATE RFCU1/98_TRANSFER_ARCHIVES/work_iteration/canonical_bundles
+          if git diff --cached --quiet; then
+            echo 'Migration already complete.'
+            exit 0
+          fi
+          git commit -m 'RFCU1: complete Module A and RUN 008-010 migration'
+          git push origin HEAD:agent/rfcu1-work-iteration-recovery
