@@ -1,11 +1,28 @@
 # Current Canonical State
 
-- Architecture version: v1.1
-- Scientific execution status: NOT STARTED
-- Active module: Module A
-- Next authorized preparation group: RFCU1-A-000 through RFCU1-A-002
-- Canonical upstream architecture: `01_ARCHITECTURE/RFC_Canonical_Master_Architecture_v1.1.md`
-- Binding lock: `01_ARCHITECTURE/RFC_CANONICAL_ARCHITECTURE_LOCK_v1.1.md`
-- GitHub status: pre-execution baseline branch established; publication proceeds through a draft pull request.
+- Project: RFCU1
+- Canonical repository: `Charlie-glitch83/Recursive-Fractal-Cosmology`
+- Recovery branch: `agent/rfcu1-work-iteration-recovery`
+- Architecture lineage: Rebuild v3.0 foundation and its verified descendants
+- Primitive triad: CIF, QV, RFL
+- First Action: `QV(CIF) -> RFL`
+- RFCU2 status: `QUARANTINED_NOT_A_PARENT`
+- Scientific execution status: `WORK_ITERATION_RECOVERED_THROUGH_RUN_013_CLOSEOUT`
+- Latest fully represented clean checkpoint: RUN 010 at `1.0000/CLEAN_PASS`
+- Recovered later work: RUN 011 and RUN 012 delivery identities; RUN 013 PASS closeout
+- RUN 013 registration status: `PENDING_COMPLETE_PAYLOAD_IMPORT_AND_HASH_REPLAY`
+- RUN 014 status: `NOT_AUTHORIZED`
 
-No physical or empirical run is authorized before the repository/source bootstrap is audited and closed.
+## Controlling recovery records
+
+- `WORK_ITERATION_RECOVERY_INVENTORY.md`
+- `../07_AUDITS/WORK_ITERATION_RECOVERY_AUDIT_2026-07-25.md`
+- `../99_QUARANTINE/RFCU2_EXCLUSION.md`
+
+## Binding boundary
+
+The former declaration that scientific execution had not started is obsolete and must not govern the recovered lineage.
+
+The recovered RUN 013 closeout does not by itself complete canonical registration. The full RUN 011–013 payloads must be imported, matched to their SHA-256 ledgers, replayed against their parent chain, and registered in sequence.
+
+RUN 014 may be authorized only by a separate versioned authorization issued after successful RUN 013 registration. No RUN 014 execution has begun.
