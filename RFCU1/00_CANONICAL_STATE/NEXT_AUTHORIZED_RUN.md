@@ -1,22 +1,26 @@
 # Next Authorized Action
 
-## Complete RUN 013 Recovery and Canonical Registration
+## Complete the parent-chain migration required to execute RUN 014
 
-This is a recovery and registration action, not a new scientific run.
+The recovered frozen checkpoint authorizes:
 
-### Required work
+`RUN_014_MODULE_B_COMMON_ANCESTRY_AND_CONTRACT_FREEZE`
 
-1. Import the complete Work-iteration RUN 011 payload.
-2. Verify it against the recovered delivery SHA-256 identities and its frozen parent.
-3. Import and verify the complete RUN 012 payload.
-4. Import and verify the complete RUN 013 payload and closeout.
-5. Replay all mandatory parent, source-firewall, no-retune, deterministic, and independent-verification gates.
-6. Register RUN 011, RUN 012, and RUN 013 in order.
-7. Update the canonical state to `RUN_013_REGISTERED`.
-8. Issue a separate versioned authorization for RUN 014.
+That historical authorization is now preserved exactly. It is not permission to execute RUN 014 from an incomplete recovery branch.
 
-## Current prohibition
+## Required recovery work before execution
 
-`RUN 014` is not yet authorized and must not execute during recovery.
+1. Import the complete original RUN 001-007 payload bundle, including `H_A`, `TEC_A`, validators, results, closeouts, and SHA-256 ledgers.
+2. Import the complete original RUN 008-010 payload bundle.
+3. Import `Module Plans.zip` and reconcile its exact documents.
+4. Import the v3.0-to-execution promotion/source-reconciliation and RUN 001 authorization bridge.
+5. Verify every parent hash and internal ledger through RUN 010.
+6. Replay the deterministic, independent, source-firewall, no-retune, and lineage gates.
+7. Produce the root dependency manifest from v3.0 through RUN 013.
+8. Confirm RUN 014's frozen inputs without changing its Work-iteration specification.
 
-RFCU2, its repository, and its artifacts are quarantined and may not supply missing RFCU1 content, equations, hashes, outcomes, or authorization.
+## Current execution prohibition
+
+`RUN 014` is `AUTHORIZED_BY_RECOVERED_CHECKPOINT_BUT_NOT_EXECUTABLE_PENDING_PARENT_RECOVERY`.
+
+No new scientific execution may begin during the migration gap. RFCU2, an old failure, a summary, or a reconstructed substitute may not provide missing parent content.
