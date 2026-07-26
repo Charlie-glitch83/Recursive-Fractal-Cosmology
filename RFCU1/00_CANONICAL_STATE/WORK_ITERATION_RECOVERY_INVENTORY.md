@@ -90,10 +90,8 @@ RFC_Canonical_Project_Bundle_20260722_v3_32_B011_REGISTERED.zip
 sha256: a2e2966998a33e0b13c1c0cdf8e85ca52fac0332e38b7fbdedabe5c8dcf30a88
 
 B011_Compression_Relic_Background_and_Perturbation_Contract_Successful_Run_20260722.zip
-sha256: edb3932681222a1c1c0cdf8e85ca52fac0332e38b7fbdedabe5c8dcf30a88
+sha256: edb3932681222a1c1bc14a0e35c554fac23e043580b0a9ab9a72595deaf56cc3
 ```
-
-**Correction note:** the delivery ledger must be re-read before registration because the two displayed hashes above must be checked against the source ledger; no hash is accepted from this transcription alone.
 
 ## RUN 012 delivery identities
 
