@@ -7,35 +7,50 @@
 
 ## Purpose
 
-This inventory records persistent artifacts recovered from the Rebuild File Library and the live GitHub repository after the Work iteration ended. It prevents the obsolete pre-execution baseline from erasing completed work and prevents unrelated RFCU2 material from entering RFCU1.
+This inventory distinguishes exact migrated bytes from lineage evidence, summaries, and unresolved File Library references.
 
-## User-confirmed provenance
+## Exact supplied batch
 
-The user identified these as products of the expired Work iteration:
+The 2026-07-26 transfer archive preserves 13 original user-supplied files byte-for-byte:
 
-1. the Rebuild-folder v3.0 foundation materials;
-2. the RFC rebuild Module A RUN 001-007 lineage;
-3. the Module B RUN 008-010 clean checkpoint;
-4. the RFC rebuild Module B RUN 011-013 package;
-5. the intended stopping point after RUN 013, with RUN 014 next after registration.
+`../98_TRANSFER_ARCHIVES/work_iteration/raw_rebuild_uploads_batch_20260726/`
 
-User provenance is recorded as a recovery fact. Scientific admission still requires exact file identity, parent continuity, hashes, and registration.
+Its `MEMBER_SHA256SUMS.txt` records both uploaded v3.0 architecture variants, all corresponding individual architecture files, and the exact Module B RUN 011-013 canonical checkpoint ZIP.
 
-## Recovered Module A lineage: RUN 001-007
+Batch status: `13/13 EXACT_BYTE_MIGRATION_CLOSED`.
 
-The recovered RUN 007 closeout and integrated theorem identify a six-parent chain and the following scientific roles:
+## Architecture v3.0
 
-| Run | Recovered role | Current recovery status |
+Both initial and revised Work-iteration variants are preserved in the raw transfer archive. The revised architecture is also unpacked at:
+
+`../01_ARCHITECTURE/v3.0_source_gated/`
+
+The readable set now includes:
+
+- `README.md`;
+- `RFC_NEW_INTEGRATED_PROOF_MASTER_ARCHITECTURE_v3.0_SOURCE_GATED.md`;
+- `RFC_CANONICAL_PROOF_LOCK_v3.0_SOURCE_GATED.md`;
+- `RFC_DEEP_SOAK_AND_SOURCE_AUDIT_v3.0.md`;
+- `RFC_v3.0_ARCHITECTURE_MANIFEST.json`;
+- `SHA256SUMS.txt`.
+
+The v3.0-to-execution promotion/source-reconciliation bridge remains missing.
+
+## Module A lineage: RUN 001-007
+
+The RUN 007 closeout confirms six parent runs and assigns their scientific roles:
+
+| Run | Recovered role | Exact payload status |
 |---|---|---|
-| RUN 001 | First Module A parent; exact original title and complete inventory still pending | parent confirmed by RUN 007 replay |
-| RUN 002 | irreducible CIF/QV/RFL constitution and typed First Action `QV(CIF) -> RFL` | role identified; payload pending |
-| RUN 003 | finite/infinite kernel-index reconciliation, absolute/uniform convergence, norm and truncation bounds | role identified; payload pending |
-| RUN 004 | terminal N-body composition, singleton reduction, `N(N-1)` lanes, `2N` add-one-body growth | role identified; payload pending |
-| RUN 005 | local route existence/uniqueness, invariant witnesses, target-blind modal basis, maximal noncollision patching, lawful refinement | role identified; payload pending |
-| RUN 006 | event multifunction, no-loss quotient, memory, promotion/reopening, dormancy, perturbation/differentiability, recursive-depth memory | role identified; payload pending |
-| RUN 007 | integrated theorem, `RFC-H_A-v1.0`, `RFC-TEC_A-v1.0`, Module B authorization | closeout imported; theorem/certificate exact-byte import pending |
+| 001 | first Module A parent/source constitution | missing |
+| 002 | CIF/QV/RFL constitution and First Action | missing |
+| 003 | convergent and bounded kernel | missing |
+| 004 | terminal N-body completion | missing |
+| 005 | witnessed route existence and refinement | missing |
+| 006 | event/no-loss/memory/scale/stability | missing |
+| 007 | integrated theorem, `H_A`, `TEC_A`, Module B authorization | closeout present; full payload missing |
 
-RUN 007 records:
+RUN 007 reports:
 
 ```text
 parent runs: 6/6
@@ -45,116 +60,69 @@ Module A proof obligations: 18/18
 required-component ablations: 9/9
 freeze hashes: 23/23
 TEC components: 8/8 at 1.0000/CLEAN_PASS
-RUN 007 deterministic replay: identical
 ```
 
-All 15 RUN 007 gates closed at `1.0000/CLEAN_PASS`.
+This establishes lineage but does not replace original RUN 001-007 bytes.
 
-Controlling files:
+## Module B checkpoint: RUN 008-010
 
-- `../04_RUNS/MODULE_A_RUN_001_007_LINEAGE.md`
-- `../04_RUNS/RUN_007_MODULE_A_EXPORT_AND_TEC/RUN_007_CLOSEOUT.md`
+A frozen clean checkpoint and RUN 010 identity are recovered. All three runs are reported at `1.0000/CLEAN_PASS`, with RUN 011 authorized next. The complete original RUN 008-010 payload bundle remains missing.
 
-The six-parent replay establishes the lineage. It does not replace the original RUN 001-006 payloads.
+## Exact Module B checkpoint: RUN 011-013
 
-## Recovered Module B checkpoint: RUN 008-010
+Original archive:
 
-Recovered checkpoint identity:
+`RFC_Rebuild_Module_B_RUNS_011_013_Canonical_Checkpoint_Bundle.zip`
+
+SHA-256:
+
+`e6789d5aa68886727db023e586e60550d16314eff916b248c778045e423a7098`
+
+Checkpoint ID:
+
+`RFC-MODULE-B-RUNS-011-013-v1.0`
+
+| Run | Exact run ID | Result | Gates | Exact checks | Independent checks | Ablations |
+|---|---|---|---:|---:|---:|---:|
+| 011 | `RFC-RUN-011-B012-B013` | `1.0000/CLEAN_PASS` | 16/16 | 1,410/1,410 | 606/606 | 12/12 |
+| 012 | `RFC-RUN-012-B014` | `1.0000/CLEAN_PASS` | 17/17 | 7,632/7,632 | 5,736/5,736 | 13/13 |
+| 013 | `RFC-RUN-013-B015` | `1.0000/CLEAN_PASS` | 19/19 | 3,960/3,960 | 2,880/2,880 | 17/17 |
+
+The internal SHA-256 ledger verifies all 24 run files. Combined:
 
 ```text
-RFC_Module_B_Runs_008_010_CHECKPOINT_README.md
-status: FROZEN CLEAN CHECKPOINT
-parent: RFC-H_A-v1.0
-TEC_A: 1.0000/CLEAN_PASS
-latest result: RUN 010 = 1.0000/CLEAN_PASS
-next authorized at that checkpoint: RUN 011
+exact checks:       13,002/13,002
+independent checks:  9,222/9,222
+ablations:               42/42
+Wolfram suites:            3/3 VERIFIED
 ```
 
-Recovered RUN 010 identity:
+The checkpoint authorizes:
 
-```text
-run_id: RFC-RUN-010-B008-B011
-result: CLEAN_PASS
-score: 1.0000
-hard_stop_triggered: false
-public_data_used: false
-historical_outcome_used: false
-retune_used: false
-next_run_authorized: RUN_011_MODULE_B_SECTOR_PARTITION_AND_NO_DOUBLE_COUNTING
-```
+`RUN_014_MODULE_B_COMMON_ANCESTRY_AND_CONTRACT_FREEZE`
 
-## RUN 011 delivery identities
+## Superseded provisional records
 
-```text
-RFC_Canonical_Project_Bundle_20260722_v3_32_B011_REGISTERED.zip
-sha256: a2e2966998a33e0b13c1c0cdf8e85ca52fac0332e38b7fbdedabe5c8dcf30a88
+Earlier recovery notes associated RUN 011-013 with separate B011/B012 delivery names and a v3.35 B013 closeout. Those records are not used to identify this exact checkpoint. The supplied canonical checkpoint's own manifest, run IDs, files, and SHA-256 ledger now control RUN 011-013.
 
-B011_Compression_Relic_Background_and_Perturbation_Contract_Successful_Run_20260722.zip
-sha256: edb3932681222a1c1bc14a0e35c554fac23e043580b0a9ab9a72595deaf56cc3
-```
+The older conflicting records remain historical evidence only and may not overwrite the exact checkpoint.
 
-## RUN 012 delivery identities
+## Authorization distinction
 
-```text
-RFC_Canonical_Project_Bundle_20260722_v3_34_B012_REGISTERED.zip
-sha256: 9ddb0464a5393a4646a6e70c8561c13e9c2254d7e76181a8bb063fa9aebd0fe2
+RUN 014 is historically authorized by the recovered frozen checkpoint. It is not executable from the current branch until:
 
-B012_Dissipative_Tail_Background_Perturbation_and_Terminal_Contract_Successful_Run_20260722.zip
-sha256: 19e4a7b8f3b0f7190503a8b4a213a4b7a7d6d65fe5045af012eef228c41bf5ef
-```
+- complete RUN 001-007 bytes are migrated;
+- complete RUN 008-010 bytes are migrated;
+- the v3.0 promotion bridge is migrated;
+- all parent hashes and validators through RUN 010 replay cleanly.
 
-## RUN 013 recovered closeout
+## Remaining one-to-one migration gap
 
-```text
-run_id: B013
-module: B
-title: Common Ancestry, Contract Freeze, UniverseState, and Handoffs
-parent: B012
-parent_hash: c20172d2f169df06fd1d957af7347418bf992238786bf10a202158b21bb3ae20
-bundle_version: 3.35
-status: PASS pending canonical registration
-primary outcomes: 117/117
-independent checks: 20/20
-mandatory gates: 11/11
-```
+1. Module A RUN 001-007 complete payload bundle.
+2. Module B RUN 008-010 complete payload bundle.
+3. `Module Plans.zip` and exact plan documents.
+4. v3.0-to-execution promotion/source-reconciliation bridge.
+5. Canonical P29, P30, and N-body source bytes at their repository paths.
+6. Any additional Work-iteration file present in the Rebuild folder but absent from the supplied-batch member ledger.
 
-The closeout states that RUN 014 requires a separate versioned authorization after successful RUN 013 registration.
-
-## Recovery classifications
-
-| Artifact class | Recovery status | Canonical effect |
-|---|---|---|
-| RFCU1 v3.0 foundation | USER_CONFIRMED_WORK_ITERATION | candidate canonical foundation; exact-file audit required |
-| RFCU1 RUN 001-007 | RECOVERED_LINEAGE | preserve and import with exact hashes; RUN 007 closeout imported |
-| RFCU1 RUN 008-010 | RECOVERED_CLEAN_CHECKPOINT | preserve and import complete payloads |
-| RFC rebuild Module B RUN 011-013 | USER_CONFIRMED_WORK_ITERATION | recover payloads, verify parent chain, register RUN 013 |
-| RFCU2 repository and files | QUARANTINED | no scientific or authorization effect |
-| Older unrelated execution lineages | QUARANTINED_PENDING_PROOF | no effect unless exact RFCU1 ancestry is proved |
-| RUN 014 | NOT_EXECUTED_NOT_AUTHORIZED | authorization only after RUN 013 registration |
-
-## Current hard boundary
-
-```text
-RUN 001-013 lineage identified
-complete original payload coverage not yet achieved
-RUN 013 scientific closeout recovered
-RUN 013 canonical registration incomplete in GitHub
-RUN 014 not yet authorized
-```
-
-The repository must not claim scientific execution never started. It also must not claim RUN 014 is executable before the complete parent chain is imported, hash-verified, replayed, and registered.
-
-## Required recovery sequence
-
-1. Recover the complete v3.0 foundation file set and deduplicate exact copies.
-2. Recover and verify RUN 001-006 against their original manifests and ledgers.
-3. Import and verify the RUN 007 integrated theorem, TEC_A, export manifest, validators, and hashes.
-4. Recover and verify RUN 008-010 complete payloads.
-5. Recover RUN 011, RUN 012, and RUN 013 payloads named by their delivery ledgers and closeout.
-6. Verify every parent hash and internal SHA-256 ledger.
-7. Preserve failed attempts and investigations without making them active parents.
-8. Register all runs in dependency order.
-9. Update canonical state to `RUN_013_REGISTERED` only after exact replay.
-10. Issue a separate versioned RUN 014 authorization.
-
-No step may be skipped by treating a closeout summary or downstream replay as a substitute for the full run payload.
+No summary, search result, hash-only reference, old failure, or RFCU2 artifact may substitute for missing original bytes.
