@@ -1,0 +1,29 @@
+name: RFCU1 Recovery Gate
+
+on:
+  pull_request:
+    paths:
+      - "RFCU1/**"
+      - ".github/workflows/rfcu1-recovery-gate.yml"
+  push:
+    branches:
+      - "agent/rfcu1-work-iteration-recovery"
+    paths:
+      - "RFCU1/**"
+      - ".github/workflows/rfcu1-recovery-gate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  recovery-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate RFCU1 recovery state
+        run: python RFCU1/06_VALIDATION/verify_recovery_state.py
