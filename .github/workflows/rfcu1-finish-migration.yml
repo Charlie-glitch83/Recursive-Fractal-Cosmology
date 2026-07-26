@@ -51,6 +51,7 @@ jobs:
           mkdir -p RFCU1/deliverables RFCU1/execution
           cp -a "$work/module_a/deliverables/." RFCU1/deliverables/
           cp -a "$work/module_a/execution/." RFCU1/execution/
+          cp -a "$work/module_b/deliverables/." RFCU1/deliverables/
           cp -a "$work/module_b/execution/." RFCU1/execution/
 
           archive_dir='RFCU1/98_TRANSFER_ARCHIVES/work_iteration/canonical_bundles'
