@@ -5,22 +5,31 @@
   "status": "RECOVERY_IN_PROGRESS",
   "merge_authorized": false,
   "rfc_u2_parentage": false,
+  "supplied_batch_20260726": {
+    "original_files_supplied": 13,
+    "original_files_preserved": 13,
+    "status": "EXACT_BYTE_MIGRATION_CLOSED",
+    "member_ledger": "../98_TRANSFER_ARCHIVES/work_iteration/raw_rebuild_uploads_batch_20260726/MEMBER_SHA256SUMS.txt",
+    "transfer_archive": "../98_TRANSFER_ARCHIVES/work_iteration/raw_rebuild_uploads_batch_20260726/",
+    "checkpoint_zip_sha256": "e6789d5aa68886727db023e586e60550d16314eff916b248c778045e423a7098"
+  },
   "architecture": {
-    "v3_0_exact_archive_preserved": true,
-    "v3_0_archive_sha256": "ed41cf3a023394983f4202d220e3ecd22de6a24ff960834b75a1a586b52d48b0",
+    "v3_0_initial_archive_preserved_in_raw_batch": true,
+    "v3_0_revised_archive_preserved": true,
+    "v3_0_revised_archive_sha256": "ed41cf3a023394983f4202d220e3ecd22de6a24ff960834b75a1a586b52d48b0",
     "v3_0_readme_unpacked": true,
     "v3_0_manifest_unpacked": true,
     "v3_0_proof_lock_unpacked": true,
-    "v3_0_master_architecture_unpacked": false,
-    "v3_0_deep_soak_audit_unpacked": false,
+    "v3_0_master_architecture_unpacked": true,
+    "v3_0_deep_soak_audit_unpacked": true,
     "v3_0_to_execution_promotion_record_imported": false
   },
   "canonical_sources": {
-    "presentation_29_raw": {"expected_sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e", "imported": false},
-    "presentation_29_metadata": {"expected_sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215", "imported": false},
-    "presentation_30_appendix_j": {"expected_sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6", "imported": false},
-    "n_body_proof": {"expected_sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28", "imported": false},
-    "n_body_metadata": {"expected_sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94", "imported": false},
+    "presentation_29_raw": {"expected_sha256": "cef6d68b05eb509e471c55a18b5fffedd9c411b44bc0d5bd0f6b5ee86bd8b53e", "identity_verified": true, "bytes_stored_as_canonical_source": false},
+    "presentation_29_metadata": {"expected_sha256": "82549b02c8edfabc55db4268c43eeb2d60d3a694ad528516354b1a39cfb09215", "identity_verified": true, "bytes_stored_as_canonical_source": false},
+    "presentation_30_appendix_j": {"expected_sha256": "4895c3777da3aa84da4ec2343419ffbc07502b3738602308a1f402862441eaf6", "identity_verified": true, "bytes_stored_as_canonical_source": false},
+    "n_body_proof": {"expected_sha256": "0eb5e85475e9f3ab7242ee35c359b063ea62a4e66fa7124b9f6ccad41141ab28", "identity_verified": true, "bytes_stored_as_canonical_source": false},
+    "n_body_metadata": {"expected_sha256": "caab0133cd29a3fb057a9a918ae9d2adc1477c693acbc2e3ad028754303f7d94", "identity_verified": true, "bytes_stored_as_canonical_source": false},
     "module_plans_archive": {"expected_sha256": "6fbf126f62e8c9a383446b0aae2691ac40a3a9ccc34c293de5ef9e462012cb76", "imported": false}
   },
   "runs": {
@@ -34,21 +43,29 @@
     "008": {"lineage_identified": true, "checkpoint_evidence_recovered": true, "complete_payload_imported": false, "registered": false, "result": "1.0000/CLEAN_PASS"},
     "009": {"lineage_identified": true, "checkpoint_evidence_recovered": true, "complete_payload_imported": false, "registered": false, "result": "1.0000/CLEAN_PASS"},
     "010": {"lineage_identified": true, "checkpoint_evidence_recovered": true, "complete_payload_imported": false, "registered": false, "result": "1.0000/CLEAN_PASS"},
-    "011": {"lineage_identified": true, "delivery_hashes_recovered": true, "complete_payload_imported": false, "registered": false},
-    "012": {"lineage_identified": true, "delivery_hashes_recovered": true, "complete_payload_imported": false, "registered": false},
-    "013": {"lineage_identified": true, "closeout_recovered": true, "complete_payload_imported": false, "registered": false, "result": "PASS_PENDING_REGISTRATION"},
-    "014": {"executed": false, "authorized": false}
+    "011": {"lineage_identified": true, "checkpoint_archive_imported": true, "internal_payload_hash_verified": true, "registered_inside_checkpoint": true, "result": "1.0000/CLEAN_PASS"},
+    "012": {"lineage_identified": true, "checkpoint_archive_imported": true, "internal_payload_hash_verified": true, "registered_inside_checkpoint": true, "result": "1.0000/CLEAN_PASS"},
+    "013": {"lineage_identified": true, "checkpoint_archive_imported": true, "internal_payload_hash_verified": true, "registered_inside_checkpoint": true, "result": "1.0000/CLEAN_PASS"},
+    "014": {"executed": false, "authorized_by_recovered_checkpoint": true, "executable_from_current_branch": false, "blocker": "RUN_001_010_COMPLETE_PARENT_PAYLOADS_AND_REPLAY"}
+  },
+  "checkpoint_011_013_verification": {
+    "run_payload_files": 24,
+    "sha256_files_verified": 24,
+    "exact_checks": "13002/13002",
+    "independent_checks": "9222/9222",
+    "ablations": "42/42",
+    "wolfram_suites": "3/3 VERIFIED"
   },
   "closure_requirements": [
-    "unpack remaining v3.0 architecture documents",
-    "import and hash-match all canonical source files",
-    "import Module Plans.zip and its 17 plan documents",
+    "import complete RUN 001-007 payload bundle",
+    "import complete RUN 008-010 payload bundle",
+    "import Module Plans.zip and its exact plan documents",
     "import exact v3.0-to-execution promotion and authorization bridge",
-    "import complete RUN 001-013 payloads",
-    "verify every internal SHA-256 ledger and parent hash",
-    "run deterministic and independent replay checks",
+    "store canonical P29, P30, and N-body source bytes at their canonical repository paths",
+    "verify every internal SHA-256 ledger and parent hash through RUN 010",
+    "run deterministic and independent replay checks through RUN 010",
     "produce one root dependency manifest covering architecture, sources, RUN 001-013, H_A, TEC_A, and registration state",
-    "register RUN 001-013 in dependency order",
-    "issue a separate versioned RUN 014 authorization only after RUN 013 registration"
+    "confirm RUN 014 frozen inputs before execution",
+    "migrate any additional Rebuild-folder file not listed in the supplied-batch member ledger"
   ]
 }
